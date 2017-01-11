@@ -180,7 +180,8 @@ light:
 
 # emulated hue bridge
 emulated_hue:
-  host_ip: !secret emulated_hue_host_ip
+  #no longer using this because removed --net=host from run
+  #host_ip: !secret emulated_hue_host_ip
   listen_port: !secret emulated_hue_listen_port
   off_maps_to_on_domains:
     - script
@@ -631,8 +632,11 @@ weblink:
     - name: Plex Web
       url: !secret plex_url
       icon: mdi:plex
-    - name: Camera Configuration
+    - name: FY Camera Configuration
       url: !secret mjpeg_camera_1_config_url
+      icon: mdi:video
+    - Name: LR Camera Configuration
+      url: !secret mjpeg_camera_2_config_url
       icon: mdi:video
     - name: Subsonic Web
       url: !secret subsonic_url
