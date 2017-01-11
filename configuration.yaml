@@ -1,0 +1,681 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  customize:
+    switch.patio_lamp:
+      icon: mdi:lamp
+    switch.salt_lamp:
+      icon: mdi:lamp
+    switch.roku:
+      icon: mdi:television-guide
+    switch.television:
+      icon: mdi:television
+    switch.music:
+      icon: mdi:music-note
+    switch.harmony_hub_1:
+      icon: mdi:television
+    switch.harmony_hub_2:
+      icon: mdi:television-guide
+    switch.harmony_hub_3:
+      icon: mdi:music-note
+    switch.harmony_hub_4:
+      icon: mdi:gamepad-variant
+    scene.sunset_scene:
+      icon: mdi:weather-sunset
+    scene.work_scene:
+      icon: mdi:worker
+    scene.bedtime_scene:
+      icon: mdi:hotel
+    scene.power_down_scene:
+      icon: mdi:power
+    binary_sensor.tungsten:
+      icon: mdi:laptop
+    scene.sunrise_scene:
+      icon: mdi:weather-sunset-up
+    sensor.printer_status:
+      icon: mdi:printer
+    sensor.page_counter:
+      icon: mdi:book-open-page-variant
+    sensor.cartridge:
+      icon: mdi:printer-alert
+    switch.stereo_bluetooth_adapter:
+      icon: mdi:music-note-bluetooth
+    switch.security:
+      icon: mdi:camera
+
+# Show links to resources in log and frontend
+#introduction:
+
+# bonjour/avahi
+zeroconf:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+
+# Checks for available updates
+updater:
+  reporting: no
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - temperature
+    units: us
+  - platform: plex
+    name: Plex Info
+    host: !secret plex_host_ip
+    port: !secret plex_host_port
+    username: !secret plex_user
+    password: !secret plex_password
+    server: iron
+  - platform: systemmonitor
+    resources:
+      - type: memory_use_percent
+      - type: processor_use
+  - platform: sabnzbd
+    host: !secret sabnzbd_host
+    port: !secret sabnzbd_port
+    api_key: !secret sabnzbd_api_key
+    monitored_variables:
+      - 'current_status'
+      - 'speed'
+      - 'queue_size'
+  - platform: fitbit
+    monitored_resources:
+      - "body/weight"
+      - "activities/steps"
+      - "activities/heart"
+  - platform: snmp
+    host: !secret printerip
+    port: !secret printerport
+    baseoid: 1.3.6.1.2.1.43.10.2.1.4.1.1
+    name: Page Counter
+  - platform: snmp
+    host: !secret printerip
+    port: !secret printerport
+    baseoid: 1.3.6.1.2.1.43.16.5.1.2.1.1
+    name: Printer Status
+  - platform: snmp
+    host: !secret printerip
+    port: !secret printerport
+    baseoid: 1.3.6.1.2.1.43.11.1.1.6.1.1
+    name: Cartridge
+
+#  - platform: miflora
+#    mac: C4:7C:8D:61:4B:E3
+#    name: Christmas Cactus
+#    median: 1
+#    force_update: true
+#    monitored_conditions:
+#      - moisture
+#      - light
+#      - temperature
+#      - conductivity
+#  - platform: miflora
+#    mac: C4:7C:8D:60:D6:D0
+#    name: Lipstick Plant
+#    median: 1
+#    force_update: true
+#    monitored_conditions:
+#      - moisture
+#      - light
+#      - temperature
+#      - conductivity
+#  - platform: miflora
+#    mac: C4:7C:8D:60:D6:98
+#    name: Elephant Ear
+#    median: 1
+#    force_update: true
+#    monitored_conditions:
+#      - moisture
+#      - light
+#      - temperature
+#      - conductivity
+
+# device trackers
+device_tracker:
+  - platform: nmap_tracker
+    hosts: !secret nmap_device_tracker_hosts
+    home_interval: 10
+    interval_seconds: 120
+    consider_home: 180
+    exclude: !secret nmap_device_tracker_excludes
+
+# phillips hue bridge
+light:
+  platform: hue
+  host: !secret hue_host_ip
+  allow_unreachable: yes
+
+# emulated hue bridge
+emulated_hue:
+  host_ip: !secret emulated_hue_host_ip
+  listen_port: !secret emulated_hue_listen_port
+  off_maps_to_on_domains:
+    - script
+    - scene
+  expose_by_default: true
+  exposed_domains:
+    - switch
+    - scene
+
+# switches
+switch:
+  - platform: orvibo
+    discovery: false
+    scan_interval: 60
+    switches:
+      - host: !secret orvibo_switch_1_host
+        mac: !secret orvibo_switch_1_mac
+        name: "Patio Lamp"
+      - host: !secret orvibo_switch_2_host
+        mac: !secret orvibo_switch_2_mac
+        name: "Salt Lamp"
+      - host: !secret orvibo_switch_3_host
+        mac: !secret orvibo_switch_3_mac
+        name: "Stereo Bluetooth Adapter"
+  - platform: command_line
+    scan_interval: 60
+    switches:
+      harmony_hub_1:
+        friendly_name: Television
+        command_on: !secret harmony_hub_1_command_on
+        command_off: !secret harmony_hub_1_command_off
+        command_state: !secret harmony_hub_1_command_state
+  - platform: command_line
+    scan_interval: 60
+    switches:
+      harmony_hub_2:
+        friendly_name: Roku
+        command_on: !secret harmony_hub_2_command_on
+        command_off: !secret harmony_hub_2_command_off
+        command_state: !secret harmony_hub_2_command_state
+  - platform: command_line
+    scan_interval: 60
+    switches:
+      harmony_hub_3:
+        friendly_name: Stereo
+        command_on: !secret harmony_hub_3_command_on
+        command_off: !secret harmony_hub_3_command_off
+        command_state: !secret harmony_hub_3_command_state
+  - platform: command_line
+    scan_interval: 60
+    switches:
+      harmony_hub_4:
+        friendly_name: Playstation
+        command_on: !secret harmony_hub_4_command_on
+        command_off: !secret harmony_hub_4_command_off
+        command_state: !secret harmony_hub_4_command_state
+  - platform: command_line
+    scan_interval: 60
+    switches:
+      security:
+        friendly_name: Security Cameras
+        command_on: "/bin/bash /config/scripts/camerason.sh"
+        command_off: "/bin/bash /config/scripts/camerasoff.sh"
+
+# fun, but dangerous switch to have
+#  - platform: digital_ocean
+#    droplets:
+#      - 'tungsten'
+
+# media players
+media_player:
+  - platform: universal
+    name: Living Room Media
+    children:
+      - media_player.roku_1gh31e025621
+      - media_player.55h6sg
+      - media_player.living_room_roku
+  - platform: cast
+    name: Office Chromecast
+    host: !secret chromecastip
+  - platform: firetv
+    host: !secret firetvip
+    port: !secret firetvport
+    device: default
+    name: Amazon Fire
+
+remote:
+  - platform: harmony
+    name: Living Room
+    host: !secret harmonyhubip
+
+# groups
+group:
+  bedroomlights:
+    name: Bed Room Lights
+    view: no
+    entities:
+      - light.bedroom_1
+      - light.bedroom_2
+
+  bedroom:
+    view: yes
+    entities:
+      group.bedroomlights
+
+  sparebedroomlights:
+    name: Spare Bedroom Lights
+    view: no
+    entities:
+      - light.spare_bedroom_1
+      - light.spare_bedroom_2
+
+  sparebedroom:
+    name: Spare Bedroom
+    view: yes
+    entities:
+      - group.sparebedroomlights
+
+  livingroomoverhead:
+    name: Living Room Overhead Lights
+    view: no
+    entities:
+      - light.living_room__front_left
+      - light.living_room__front_right
+      - light.living_room__rear_left
+      - light.living_room__rear_right
+
+  alanfitbit:
+    name: Alan's Fitbit Data
+    view: no
+    entities:
+      - sensor.body_weight
+      - sensor.steps
+      - sensor.resting_heart_rate
+
+#  christmascactus:
+#    name: Christmas Cactus
+#    view: no
+#    entities:
+#      - sensor.christmas_cactus_conductivity
+#      - sensor.christmas_cactus_light_intensity
+#      - sensor.christmas_cactus_moisture
+#      - sensor.christmas_cactus_temperature
+
+#  lipstick:
+#    name: Lipstick Plant
+#    view: no
+#    entities:
+#      - sensor.lipstick_plant_conductivity
+#      - sensor.lipstick_plant_light_intensity
+#      - sensor.lipstick_plant_moisture
+#      - sensor.lipstick_plant_temperature
+
+#  elephantear:
+#    name: Elephant Ear
+#    view: no
+#    entities:
+#      - sensor.elephant_ear_conductivity
+#      - sensor.elephant_ear_light_intensity
+#      - sensor.elephant_ear_moisture
+#      - sensor.elephant_ear_temperature
+
+#  livingroomplants:
+#    name: Living Room Plants
+#    view: no
+#    entities:
+#      - group.christmascactus
+#      - group.lipstick
+#      - group.elephantear
+
+  livingroom:
+    name: Living Room
+    view: yes
+    entities:
+      - group.livingroomoverhead
+      - light.living_room_lamp
+      - switch.salt_lamp
+      - switch.harmony_hub_1
+      - switch.harmony_hub_2
+      - switch.harmony_hub_3
+      - switch.harmony_hub_4
+      - switch.stereo_bluetooth_adapter
+#      - group.livingroomplants
+
+  officelights:
+    name: Office Lights
+    view: no
+    entities:
+      - light.office_1
+      - light.office_2
+
+  office:
+    name: Office
+    view: yes
+    entities:
+      - group.officelights
+      - group.system
+      - group.server_stats
+      - group.printer_stats
+
+  basementlights:
+    name: Basement Lights
+    view: no
+    entities:
+      - light.basement_stairs
+      - light.basement_middle
+      - light.basement_front
+      - light.basement_rear_left
+      - light.basement_rear_right
+      - light.laundry
+
+  basement:
+    name: Basement
+    view: yes
+    entities:
+      - group.basementlights
+      - light.laundry
+
+  laundryroom:
+    name: Laundry Room Lights
+    view: no
+    entities:
+      - light.laundry
+      - light.basement_stairs
+      - light.basement_middle
+
+  pantry:
+    name: Pantry Lights
+    view: no
+    entities:
+      - light.basement_stairs
+      - light.basement_middle
+
+  patio:
+    name: Patio
+    view: yes
+    entities:
+      - group.patiolights
+
+  patiolights:
+    name: Patio Lights
+    view: no
+    entities:
+      - switch.patio_lamp
+
+  people:
+    name: People
+    view: no
+    entities:
+      - device_tracker.alan_phone
+      - device_tracker.robbie_phone
+
+  system:
+    name: System Stats
+    view: no
+    entities:
+      - sensor.cpu_use
+      - sensor.ram_use
+
+  server_stats:
+    name: Server Status
+    view: no
+    entities:
+      - sensor.sabnzbd_status
+      - sensor.sabnzbd_speed
+      - sensor.sabnzbd_queue
+      - sensor.plex_info
+
+  printer_stats:
+    name: Printer Status
+    entities:
+      - sensor.printer_status
+      - sensor.page_counter
+      - sensor.cartridge
+
+  weather:
+    name: Weather
+    view: no
+    entities:
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+
+automation:
+  alias: Sunset Lights On
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:05:00"
+  condition:
+    condition: state
+    entity_id: group.livingroomoverhead
+    state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.sunset_scene
+    - service: notify.living_room_tv
+      data:
+        message: "The sun is about to set. Turning on some lights."
+        title: "Sunset"
+    - service: notify.bedroom_tv
+      data:
+        message: "The sun is about to set. Turning on some lights."
+        title: "Sunset"
+
+automation 2:
+  alias: Late Night Power Down
+  trigger:
+    platform: time
+    after: '01:30:00'
+  condition:
+    condition: state
+    entity_id: group.livingroomoverhead
+    state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.power_down_scene
+
+automation 3:
+  alias: Work Lights On
+  trigger:
+    platform: time
+    after: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.officelights
+        state: 'off'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: 'device_tracker.alan_phone'
+        state: 'home'
+  action:
+    service: scene.turn_on
+    entity_id: scene.work_scene
+
+automation 4:
+  alias: Sunrise Stuff
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "+00:30:00"
+  action:
+    service: scene.turn_on
+    entity_id: scene.sunrise_scene
+
+automation 5:
+  alias: Bluetooth Adapter On
+  trigger:
+    platform: state
+    entity_id: switch.harmony_hub_3
+    state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.stereo_bluetooth_adapter
+
+automation 6:
+  alias: Bluetooth Adapter Off
+  trigger:
+    platform: state
+    entity_id: switch.harmony_hub_3
+    state: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.stereo_bluetooth_adapter
+
+scene:
+  name: Sunset Scene
+  entities:
+    group.livingroomoverhead:
+      state: on
+      transition: 120
+      brightness: 80
+    light.living_room_lamp:
+      state: on
+      transition: 120
+      brightness: 200
+    switch.patio_lamp:
+      state: on
+    switch.salt_lamp:
+      state: on
+
+scene 2:
+  name: Power Down Scene
+  entities:
+    group.livingroom:
+      state: off
+      transition: 120
+    switch.patio_lamp:
+      state: off
+    group.basement:
+      state: off
+
+scene 3:
+  name: Bedtime Scene
+  entities:
+    group.livingroomoverhead:
+      state: off
+      transition: 30
+    light.living_room_lamp:
+      state: off
+      transition: 60
+    switch.patio_lamp:
+      state: off
+    switch.television:
+      state: off
+    group.bedroom_lights:
+      state: on
+      transition: 120
+      brightness: 200
+    group.basement:
+      state: off
+    switch.stereo_bluetooth_adapter:
+      state: off
+
+scene 4:
+  name: Work Scene
+  entities:
+    group.officelights:
+      state: on
+      brightness: 210
+      transition: 30
+
+scene 5:
+  name: Sunrise Scene
+  entities:
+    switch.salt_lamp:
+      state: off
+
+digital_ocean:
+  access_token: !secret digital_ocean_api_token
+
+binary_sensor:
+  - platform: digital_ocean
+    droplets: !secret digital_ocean_droplets
+
+weblink:
+  entities:
+    - name: Router Configuration
+      url: !secret router_url
+      icon: mdi:router-wireless
+    - name: Plex Web
+      url: !secret plex_url
+      icon: mdi:plex
+    - name: Camera Configuration
+      url: !secret mjpeg_camera_1_config_url
+      icon: mdi:video
+    - name: Subsonic Web
+      url: !secret subsonic_url
+      icon: mdi:music-note
+    - name: Sabnzbd
+      url: !secret sabnzbd_url
+      icon: mdi:download
+    - name: Couch Potato
+      url: !secret couch_potato_url
+      icon: mdi:movie
+    - name: Sonarr
+      url: !secret sonarr_url
+      icon: mdi:television-guide
+    - name: Headphones
+      url: !secret headphones_url
+      icon: mdi:music-note
+
+camera:
+  - platform: mjpeg
+    name: Front Yard Camera
+    mjpeg_url: !secret mjpeg_camera_1_url
+    username: !secret mjpeg_camera_1_username
+    password: !secret mjpeg_camera_1_password
+  - platform: mjpeg
+    name: Living Room Camera
+    mjpeg_url: !secret mjpeg_camera_2_url
+    username: !secret mjpeg_camera_2_username
+    password: !secret mjpeg_camera_2_password
+
+notify:
+  - platform: telegram
+    name: telegram_alan
+    api_key: !secret telegram_api_key
+    chat_id: !secret telegram_alan_chat_id
+  - platform: nfandroidtv
+    name: Living Room TV
+    host: !secret nfandroidhost1
+    color: grey
+    transparency: 50%
+    position: top-right
+  - platform: nfandroidtv
+    name: Bedroom TV
+    host: !secret nfandroidhost2
+    color: grey
+    transparency: 50%
+    position: top-right
