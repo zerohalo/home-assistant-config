@@ -635,7 +635,7 @@ weblink:
     - name: FY Camera Configuration
       url: !secret mjpeg_camera_1_config_url
       icon: mdi:video
-    - Name: LR Camera Configuration
+    - name: LR Camera Configuration
       url: !secret mjpeg_camera_2_config_url
       icon: mdi:video
     - name: Subsonic Web
