@@ -7,6 +7,7 @@ known_devices.yaml
 phue.conf
 plex.conf
 fitbit.conf
+ip_bans.yaml
 home-assistant.log
 *.pid
 *.xml

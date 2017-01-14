@@ -64,6 +64,9 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
+  use_x_forwarded_for: yes
+  ip_ban_enabled: yes
+  login_attempts_threshold: 3
 
 # Checks for available updates
 updater:
