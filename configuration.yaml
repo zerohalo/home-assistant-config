@@ -87,6 +87,23 @@ logbook:
 # Track the sun
 sun:
 
+# MQTT
+mqtt:
+  broker: !secret mqttbroker
+  port: !secret mqttport
+  username: !secret mqttusername
+  password: !secret mqttpassword
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+    qos: 1
+    retain: true
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+    qos: 1
+    retain: true
+
 # Weather Prediction
 sensor:
   - platform: darksky
@@ -167,13 +184,14 @@ sensor:
 #      - conductivity
 
 # device trackers
+
 device_tracker:
-  - platform: nmap_tracker
-    hosts: !secret nmap_device_tracker_hosts
-    home_interval: 10
-    interval_seconds: 120
-    consider_home: 180
-    exclude: !secret nmap_device_tracker_excludes
+  - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: True
+    waypoint_whitelist:
+      - alan
+      - robert
 
 # phillips hue bridge
 light:
@@ -434,8 +452,8 @@ group:
     name: People
     view: no
     entities:
-      - device_tracker.alan_phone
-      - device_tracker.robbie_phone
+      - device_tracker.alan_oneplusone
+      - device_tracker.robert_oneplusone
 
   system:
     name: System Stats
@@ -521,7 +539,7 @@ automation 3:
           - thu
           - fri
       - condition: state
-        entity_id: 'device_tracker.alan_phone'
+        entity_id: 'device_tracker.alan_oneplusone'
         state: 'home'
   action:
     service: scene.turn_on
