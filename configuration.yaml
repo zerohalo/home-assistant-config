@@ -64,8 +64,8 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
-  use_x_forwarded_for: yes
-  ip_ban_enabled: yes
+  use_x_forwarded_for: true
+  ip_ban_enabled: true
   login_attempts_threshold: 3
 
 # Checks for available updates
@@ -197,7 +197,7 @@ device_tracker:
 light:
   platform: hue
   host: !secret hue_host_ip
-  allow_unreachable: yes
+  allow_unreachable: true
 
 # emulated hue bridge
 emulated_hue:
