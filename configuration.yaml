@@ -196,11 +196,8 @@ sensor:
 
 device_tracker:
   - platform: owntracks
-    max_gps_accuracy: 150
+    max_gps_accuracy: 100
     waypoints: True
-    waypoint_whitelist:
-      - alan
-      - robert
 
 # phillips hue bridge
 light:
