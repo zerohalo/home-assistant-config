@@ -39,6 +39,8 @@ homeassistant:
       icon: mdi:power
     binary_sensor.tungsten:
       icon: mdi:laptop
+    binary_sensor.slatest:
+      icon: mdi:laptop
     scene.sunrise_scene:
       icon: mdi:weather-sunset-up
     sensor.printer_status:
