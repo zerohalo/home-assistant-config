@@ -462,8 +462,8 @@ group:
     name: People
     view: no
     entities:
-      - device_tracker.alan_oneplusone
-      - device_tracker.robert_oneplusone
+      - device_tracker.alan_phone
+      - device_tracker.robert_phone
 
   system:
     name: System Stats
@@ -549,7 +549,7 @@ automation 3:
           - thu
           - fri
       - condition: state
-        entity_id: 'device_tracker.alan_oneplusone'
+        entity_id: 'device_tracker.alan_phone'
         state: 'home'
   action:
     service: scene.turn_on
