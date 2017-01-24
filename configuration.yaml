@@ -200,6 +200,7 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 100
     waypoints: True
+    waypoint_whitelist: !secret waypoint_whitelist
 
 # phillips hue bridge
 light:
@@ -274,11 +275,6 @@ switch:
         friendly_name: Security Cameras
         command_on: "/bin/bash /config/scripts/camerason.sh"
         command_off: "/bin/bash /config/scripts/camerasoff.sh"
-
-# fun, but dangerous switch to have
-#  - platform: digital_ocean
-#    droplets:
-#      - 'tungsten'
 
 # media players
 media_player:
