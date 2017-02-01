@@ -76,6 +76,7 @@ http:
   use_x_forwarded_for: true
   ip_ban_enabled: true
   login_attempts_threshold: 3
+  trusted_networks: !secret home_networks
 
 # Checks for available updates
 updater:
