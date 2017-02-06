@@ -168,6 +168,11 @@ sensor:
     password: !secret usps_password
     update_interval:
       days: 1
+  - platform: template
+    sensors:
+      living_room:
+        value_template: '{{ states.remote.living_room.attributes.current_activity }}'
+        friendly_name: 'Living Room'
 
 #  - platform: miflora
 #    mac: C4:7C:8D:61:4B:E3
@@ -245,38 +250,52 @@ switch:
       - host: !secret orvibo_switch_3_host
         mac: !secret orvibo_switch_3_mac
         name: "Stereo Bluetooth Adapter"
-  - platform: command_line
-    scan_interval: 60
+  - platform: template
     switches:
-      harmony_hub_1:
+      television:
+        value_template: "{% if is_state('sensor.living_room', 'Watch TV') %}on{% else %}off{% endif %}"
         friendly_name: Television
-        command_on: !secret harmony_hub_1_command_on
-        command_off: !secret harmony_hub_1_command_off
-        command_state: !secret harmony_hub_1_command_state
-  - platform: command_line
-    scan_interval: 60
-    switches:
-      harmony_hub_2:
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.living_room
+          data:
+            activity: "21815763"
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.living_room
+      roku:
+        value_template: "{% if is_state('sensor.living_room', 'Watch Roku') %}on{% else %}off{% endif %}"
         friendly_name: Roku
-        command_on: !secret harmony_hub_2_command_on
-        command_off: !secret harmony_hub_2_command_off
-        command_state: !secret harmony_hub_2_command_state
-  - platform: command_line
-    scan_interval: 60
-    switches:
-      harmony_hub_3:
-        friendly_name: Stereo
-        command_on: !secret harmony_hub_3_command_on
-        command_off: !secret harmony_hub_3_command_off
-        command_state: !secret harmony_hub_3_command_state
-  - platform: command_line
-    scan_interval: 60
-    switches:
-      harmony_hub_4:
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.living_room
+          data:
+            activity: "21814656"
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.living_room
+      playstation:
+        value_template: "{% if is_state('sensor.living_room', 'Play PS4') %}on{% else %}off{% endif %}"
         friendly_name: Playstation
-        command_on: !secret harmony_hub_4_command_on
-        command_off: !secret harmony_hub_4_command_off
-        command_state: !secret harmony_hub_4_command_state
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.living_room
+          data:
+            activity: "23177182"
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.living_room
+      music:
+        value_template: "{% if is_state('sensor.living_room', 'Listen to Music') %}on{% else %}off{% endif %}"
+        friendly_name: Stereo
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.living_room
+          data:
+            activity: "22062061"
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.living_room
   - platform: command_line
     scan_interval: 60
     switches:
@@ -395,10 +414,6 @@ group:
       - group.livingroomoverhead
       - light.living_room_lamp
       - switch.salt_lamp
-      - switch.harmony_hub_1
-      - switch.harmony_hub_2
-      - switch.harmony_hub_3
-      - switch.harmony_hub_4
       - switch.stereo_bluetooth_adapter
 #      - group.livingroomplants
 
@@ -569,26 +584,6 @@ automation 4:
   action:
     service: scene.turn_on
     entity_id: scene.sunrise_scene
-
-automation 5:
-  alias: Bluetooth Adapter On
-  trigger:
-    platform: state
-    entity_id: switch.harmony_hub_3
-    state: 'on'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.stereo_bluetooth_adapter
-
-automation 6:
-  alias: Bluetooth Adapter Off
-  trigger:
-    platform: state
-    entity_id: switch.harmony_hub_3
-    state: 'off'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.stereo_bluetooth_adapter
 
 scene:
   name: Sunset Scene
