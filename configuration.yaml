@@ -21,13 +21,9 @@ homeassistant:
       icon: mdi:television
     switch.music:
       icon: mdi:music-note
-    switch.harmony_hub_1:
-      icon: mdi:television
-    switch.harmony_hub_2:
-      icon: mdi:television-guide
-    switch.harmony_hub_3:
+    switch.stereo:
       icon: mdi:music-note
-    switch.harmony_hub_4:
+    switch.playstation:
       icon: mdi:gamepad-variant
     scene.sunset_scene:
       icon: mdi:weather-sunset
