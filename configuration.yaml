@@ -35,7 +35,7 @@ homeassistant:
       icon: mdi:power
     binary_sensor.tungsten:
       icon: mdi:laptop
-    binary_sensor.slatest:
+    binary_sensor.meet:
       icon: mdi:laptop
     scene.sunrise_scene:
       icon: mdi:weather-sunset-up
@@ -72,7 +72,7 @@ http:
   use_x_forwarded_for: true
   ip_ban_enabled: true
   login_attempts_threshold: 3
-  trusted_networks: !secret home_networks
+  #trusted_networks: !secret home_networks
 
 # Checks for available updates
 updater:
