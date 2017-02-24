@@ -219,6 +219,9 @@ device_tracker:
     max_gps_accuracy: 100
     waypoints: True
     waypoint_whitelist: !secret waypoint_whitelist
+  - platform: nmap_tracker
+    hosts: !secret nmap_hosts
+    home_interval: 60
 
 # phillips hue bridge
 light:
