@@ -171,13 +171,31 @@ sensor:
     username: !secret usps_username
     password: !secret usps_password
     update_interval:
-      days: 1
+      hours: 6
   - platform: template
     sensors:
       living_room:
         value_template: '{{ states.remote.living_room.attributes.current_activity }}'
         friendly_name: 'Living Room'
-
+  - platform: qnap
+    host: !secret qnap_ip
+    username: !secret qnap_username
+    password: !secret qnap_password
+    monitored_conditions:
+      - status
+      - cpu_usage
+      - memory_percent_used
+      - volume_percentage_used
+  - platform: fedex
+    username: !secret fedex_username
+    password: !secret fedex_password
+    update_interval:
+      hours: 12
+  - platform: ups
+    username: !secret ups_username
+    password: !secret ups_password
+    update_interval:
+      hours: 6
 #  - platform: miflora
 #    mac: C4:7C:8D:61:4B:E3
 #    name: Christmas Cactus
@@ -222,7 +240,6 @@ device_tracker:
   - platform: nmap_tracker
     hosts: !secret nmap_hosts
     home_interval: 60
-
 # phillips hue bridge
 light:
   platform: hue
@@ -661,6 +678,8 @@ digital_ocean:
 binary_sensor:
   - platform: digital_ocean
     droplets: !secret digital_ocean_droplets
+  - platform: aurora
+    forecast_threshold: 70
 
 weblink:
   entities:

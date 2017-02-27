@@ -22,7 +22,7 @@ tts
 *.conf
 harmony_living_room.conf
 pyozw.sqlite
-usps_cookies.*
+*.pickle
 .*
 !/.gitignore
 
