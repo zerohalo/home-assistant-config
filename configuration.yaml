@@ -170,6 +170,7 @@ sensor:
   - platform: usps
     username: !secret usps_username
     password: !secret usps_password
+    name: USPS
     update_interval:
       hours: 6
   - platform: template
@@ -189,11 +190,13 @@ sensor:
   - platform: fedex
     username: !secret fedex_username
     password: !secret fedex_password
+    name: FedEx
     update_interval:
       hours: 12
   - platform: ups
     username: !secret ups_username
     password: !secret ups_password
+    name: UPS
     update_interval:
       hours: 6
 #  - platform: miflora
@@ -395,6 +398,14 @@ group:
       - sensor.steps
       - sensor.resting_heart_rate
       - sensor.sleep_efficiency
+
+  packages:
+    name: Packages
+    view: no
+    entities:
+      - sensor.usps
+      - sensor.ups
+      - sensor.fedex
 
 #  christmascactus:
 #    name: Christmas Cactus
