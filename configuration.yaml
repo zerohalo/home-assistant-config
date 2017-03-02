@@ -346,7 +346,7 @@ media_player:
     host: !secret firetvip
     port: !secret firetvport
     device: default
-    name: Amazon Fire
+    name: Master Bedroom Amazon Fire
 
 remote:
   - platform: harmony
@@ -406,6 +406,14 @@ group:
       - sensor.usps
       - sensor.ups
       - sensor.fedex
+
+  nas:
+    name: NAS
+    entities:
+      - sensor.titanium_status
+      - sensor.titanium_cpu_usage
+      - sensor.titanium_memory_usage
+      - sensor.titanium_volume_used_titanium
 
 #  christmascactus:
 #    name: Christmas Cactus
@@ -467,6 +475,8 @@ group:
       - group.system
       - group.server_stats
       - group.printer_stats
+      - group.nas
+      - group.packages
 
   basementlights:
     name: Basement Lights
