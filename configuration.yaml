@@ -286,7 +286,7 @@ switch:
           service: remote.turn_on
           entity_id: remote.living_room
           data:
-            activity: "21815763"
+            activity: "25295743"
         turn_off:
           service: remote.turn_off
           entity_id: remote.living_room
@@ -339,14 +339,25 @@ media_player:
       - media_player.roku_1gh31e025621
       - media_player.55h6sg
       - media_player.living_room_roku
+      - media_player.living_room_fire_stick
   - platform: cast
     name: Office Chromecast
     host: !secret chromecastip
   - platform: firetv
     host: !secret firetvip
     port: !secret firetvport
-    device: default
-    name: Master Bedroom Amazon Fire
+    device: bedroom
+    name: Master Bedroom Fire Stick
+  - platform: firetv
+    host: !secret firetvip
+    port: !secret firetvport
+    device: livingroom
+    name: Living Room Fire Stick
+  - platform: firetv
+    host: !secret firetvip
+    port: !secret firetvport
+    device: sparebedroom
+    name: Spare Bedroom Fire Stick
 
 remote:
   - platform: harmony
