@@ -339,7 +339,6 @@ media_player:
       - media_player.roku_1gh31e025621
       - media_player.55h6sg
       - media_player.living_room_roku
-      - media_player.living_room_fire_stick
   - platform: cast
     name: Office Chromecast
     host: !secret chromecastip
@@ -348,11 +347,6 @@ media_player:
     port: !secret firetvport
     device: bedroom
     name: Master Bedroom Fire Stick
-  - platform: firetv
-    host: !secret firetvip
-    port: !secret firetvport
-    device: livingroom
-    name: Living Room Fire Stick
   - platform: firetv
     host: !secret firetvip
     port: !secret firetvport
@@ -757,6 +751,11 @@ camera:
     mjpeg_url: !secret mjpeg_camera_2_url
     username: !secret mjpeg_camera_2_username
     password: !secret mjpeg_camera_2_password
+  - platform: mjpeg
+    name: Office Camera
+    mjpeg_url: !secret mjpeg_camera_3_url
+    username: !secret mjpeg_camera_3_username
+    password: !secret mjpeg_camera_3_password
 
 notify:
   - platform: telegram
