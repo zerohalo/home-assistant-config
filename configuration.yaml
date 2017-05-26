@@ -167,12 +167,12 @@ sensor:
     port: !secret printerport
     baseoid: 1.3.6.1.2.1.43.11.1.1.6.1.1
     name: Cartridge
-  - platform: usps
-    username: !secret usps_username
-    password: !secret usps_password
-    name: USPS
-    update_interval:
-      hours: 6
+#  - platform: usps
+#    username: !secret usps_username
+#    password: !secret usps_password
+#    name: USPS
+#    update_interval:
+#      hours: 6
   - platform: template
     sensors:
       living_room:
@@ -240,8 +240,8 @@ device_tracker:
     max_gps_accuracy: 100
     waypoints: True
     waypoint_whitelist: !secret waypoint_whitelist
-  - platform: nmap_tracker
-    hosts: !secret nmap_hosts
+  - platform: ping
+    hosts: !secret ping_hosts
     home_interval: 60
 # phillips hue bridge
 light:
@@ -342,16 +342,6 @@ media_player:
   - platform: cast
     name: Office Chromecast
     host: !secret chromecastip
-  - platform: firetv
-    host: !secret firetvip
-    port: !secret firetvport
-    device: bedroom
-    name: Master Bedroom Fire Stick
-  - platform: firetv
-    host: !secret firetvip
-    port: !secret firetvport
-    device: sparebedroom
-    name: Spare Bedroom Fire Stick
 
 remote:
   - platform: harmony
@@ -758,10 +748,10 @@ camera:
     password: !secret mjpeg_camera_3_password
 
 notify:
-  - platform: telegram
-    name: telegram_alan
-    api_key: !secret telegram_api_key
-    chat_id: !secret telegram_alan_chat_id
+#  - platform: telegram
+#    name: telegram_alan
+#    api_key: !secret telegram_api_key
+#    chat_id: !secret telegram_alan_chat_id
   - platform: nfandroidtv
     name: Living Room TV
     host: !secret nfandroidhost1
