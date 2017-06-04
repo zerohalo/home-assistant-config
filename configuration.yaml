@@ -240,9 +240,10 @@ device_tracker:
     max_gps_accuracy: 100
     waypoints: True
     waypoint_whitelist: !secret waypoint_whitelist
-  - platform: ping
-    hosts: !secret ping_hosts
-    home_interval: 60
+    home_interval: 45
+#  - platform: ping
+#    hosts: !secret ping_hosts
+#    count: 10
 # phillips hue bridge
 light:
   platform: hue
@@ -560,7 +561,7 @@ automation:
   trigger:
     platform: sun
     event: sunset
-    offset: "-00:05:00"
+    offset: "-00:15:00"
   condition:
     condition: state
     entity_id: group.livingroomoverhead
