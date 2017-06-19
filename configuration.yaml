@@ -582,7 +582,7 @@ automation 2:
   alias: Late Night Power Down
   trigger:
     platform: time
-    after: '01:30:00'
+    at: '01:30:00'
   condition:
     condition: state
     entity_id: group.livingroomoverhead
@@ -595,7 +595,7 @@ automation 3:
   alias: Work Lights On
   trigger:
     platform: time
-    after: '08:00:00'
+    at: '08:00:00'
   condition:
     condition: and
     conditions:
