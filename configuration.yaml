@@ -202,6 +202,12 @@ sensor:
     name: UPS
     update_interval:
       hours: 6
+  - platform: mqtt_room
+    device_id: alan_phone
+    name: 'Alan'
+    state_topic: 'room_presence'
+    timeout: 5
+    away_timeout: 60
 #  - platform: miflora
 #    mac: C4:7C:8D:61:4B:E3
 #    name: Christmas Cactus
@@ -247,10 +253,14 @@ device_tracker:
   - platform: mqtt
     devices:
       alan_phone: /zanzito/alan_phone/location
-#  - platform: ping
-#    hosts: !secret ping_hosts
-#    count: 10
-
+  - platform: netgear
+    host: !secret netgear_host
+    port: !secret netgear_port
+    username: !secret netgear_username
+    password: !secret netgear_password
+    interval_seconds: 30
+    consider_home: 180
+    track_new_devices: no
 
 # phillips hue bridge
 light:
