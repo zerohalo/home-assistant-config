@@ -1,0 +1,13 @@
+- platform: orvibo
+  discovery: false
+  scan_interval: 60
+  switches:
+    - host: !secret orvibo_switch_1_host
+      mac: !secret orvibo_switch_1_mac
+      name: "Patio Lamp"
+    - host: !secret orvibo_switch_2_host
+      mac: !secret orvibo_switch_2_mac
+      name: "Salt Lamp"
+    - host: !secret orvibo_switch_3_host
+      mac: !secret orvibo_switch_3_mac
+      name: "Stereo Bluetooth Adapter"
