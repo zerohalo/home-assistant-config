@@ -1,0 +1,4 @@
+- name: Sunrise Scene
+  entities:
+    switch.salt_lamp:
+      state: off

@@ -1,0 +1,6 @@
+- name: Work Scene
+  entities:
+    group.officelights:
+      state: on
+      brightness: 210
+      transition: 30

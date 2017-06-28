@@ -1,0 +1,15 @@
+- name: Sunset Scene
+  entities:
+    group.livingroomoverhead:
+      state: on
+      transition: 120
+      brightness: 80
+    light.living_room_lamp:
+      state: on
+      transition: 120
+      brightness: 200
+    switch.patio_lamp:
+      state: on
+    switch.salt_lamp:
+      state: on
+

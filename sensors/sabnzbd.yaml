@@ -1,0 +1,8 @@
+- platform: sabnzbd
+  host: !secret sabnzbd_host
+  port: !secret sabnzbd_port
+  api_key: !secret sabnzbd_api_key
+  monitored_variables:
+    - 'current_status'
+    - 'speed'
+    - 'queue_size'

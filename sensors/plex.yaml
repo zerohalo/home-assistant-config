@@ -1,0 +1,7 @@
+- platform: plex
+  name: Plex Info
+  host: !secret plex_host_ip
+  port: !secret plex_host_port
+  username: !secret plex_user
+  password: !secret plex_password
+  server: iron

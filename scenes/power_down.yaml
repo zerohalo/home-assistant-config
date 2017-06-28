@@ -1,0 +1,10 @@
+- name: Power Down Scene
+  entities:
+    group.livingroom:
+      state: off
+      transition: 120
+    switch.patio_lamp:
+      state: off
+    group.basement:
+      state: off
+

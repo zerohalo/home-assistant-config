@@ -1,0 +1,33 @@
+#- platform: miflora
+#  mac: C4:7C:8D:61:4B:E3
+#  name: Christmas Cactus
+#  median: 1
+#  force_update: true
+#  monitored_conditions:
+#    - moisture
+#    - light
+#    - temperature
+#    - conductivity
+#    - battery
+#- platform: miflora
+#  mac: C4:7C:8D:60:D6:D0
+#  name: Lipstick Plant
+#  median: 1
+#  force_update: true
+#  monitored_conditions:
+#    - moisture
+#    - light
+#    - temperature
+#    - conductivity
+#    - battery
+#- platform: miflora
+#  mac: C4:7C:8D:60:D6:98
+#  name: Elephant Ear
+#  median: 1
+#  force_update: true
+#  monitored_conditions:
+#    - moisture
+#    - light
+#    - temperature
+#    - conductivity
+#    - battery

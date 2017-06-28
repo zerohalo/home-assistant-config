@@ -50,19 +50,7 @@ homeassistant:
     switch.security:
       icon: mdi:camera
 
-zone:
-  name: Home
-  latitude: !secret homelatitude
-  longitude: !secret homelongitude
-  radius: 25
-  icon: mdi:home
-
-zone 2:
-  name: Cabin
-  latitude: !secret cabinlatitude
-  longitude: !secret cabinlongitude
-  radius: 300
-  icon: mdi:home-variant
+zone: !include_dir_merge_list zones
 
 # Show links to resources in log and frontend
 #introduction:
@@ -102,6 +90,8 @@ sun:
 
 automation: !include_dir_list automations/
 
+scene: !include_dir_merge_list scenes/
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
@@ -119,130 +109,7 @@ mqtt:
     qos: 1
     retain: true
 
-# Weather Prediction
-sensor:
-  - platform: moon
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    monitored_conditions:
-      - summary
-      - temperature
-    units: us
-  - platform: plex
-    name: Plex Info
-    host: !secret plex_host_ip
-    port: !secret plex_host_port
-    username: !secret plex_user
-    password: !secret plex_password
-    server: iron
-  - platform: systemmonitor
-    resources:
-      - type: memory_use_percent
-      - type: processor_use
-  - platform: sabnzbd
-    host: !secret sabnzbd_host
-    port: !secret sabnzbd_port
-    api_key: !secret sabnzbd_api_key
-    monitored_variables:
-      - 'current_status'
-      - 'speed'
-      - 'queue_size'
-  - platform: fitbit
-    monitored_resources:
-      - "body/weight"
-      - "body/fat"
-      - "activities/steps"
-      - "activities/heart"
-      - "sleep/efficiency"
-  - platform: snmp
-    host: !secret printerip
-    port: !secret printerport
-    baseoid: 1.3.6.1.2.1.43.10.2.1.4.1.1
-    name: Page Counter
-  - platform: snmp
-    host: !secret printerip
-    port: !secret printerport
-    baseoid: 1.3.6.1.2.1.43.16.5.1.2.1.1
-    name: Printer Status
-  - platform: snmp
-    host: !secret printerip
-    port: !secret printerport
-    baseoid: 1.3.6.1.2.1.43.11.1.1.6.1.1
-    name: Cartridge
-#  - platform: usps
-#    username: !secret usps_username
-#    password: !secret usps_password
-#    name: USPS
-#    update_interval:
-#      hours: 6
-  - platform: template
-    sensors:
-      living_room:
-        value_template: '{{ states.remote.living_room.attributes.current_activity }}'
-        friendly_name: 'Living Room'
-  - platform: qnap
-    host: !secret qnap_ip
-    port: !secret qnap_port
-    username: !secret qnap_username
-    password: !secret qnap_password
-    ssl: true
-    verify_ssl: false
-    monitored_conditions:
-      - status
-      - cpu_usage
-      - memory_percent_used
-      - volume_percentage_used
-  - platform: fedex
-    username: !secret fedex_username
-    password: !secret fedex_password
-    name: FedEx
-    update_interval:
-      hours: 12
-  - platform: ups
-    username: !secret ups_username
-    password: !secret ups_password
-    name: UPS
-    update_interval:
-      hours: 6
-  - platform: mqtt_room
-    device_id: alan_phone
-    name: 'Alan'
-    state_topic: 'room_presence'
-    timeout: 5
-    away_timeout: 60
-#  - platform: miflora
-#    mac: C4:7C:8D:61:4B:E3
-#    name: Christmas Cactus
-#    median: 1
-#    force_update: true
-#    monitored_conditions:
-#      - moisture
-#      - light
-#      - temperature
-#      - conductivity
-#      - battery
-#  - platform: miflora
-#    mac: C4:7C:8D:60:D6:D0
-#    name: Lipstick Plant
-#    median: 1
-#    force_update: true
-#    monitored_conditions:
-#      - moisture
-#      - light
-#      - temperature
-#      - conductivity
-#      - battery
-#  - platform: miflora
-#    mac: C4:7C:8D:60:D6:98
-#    name: Elephant Ear
-#    median: 1
-#    force_update: true
-#    monitored_conditions:
-#      - moisture
-#      - light
-#      - temperature
-#      - conductivity
-#      - battery
+sensor: !include_dir_merge_list sensors/
 
 # device trackers
 
@@ -574,69 +441,6 @@ group:
     entities:
       - sensor.dark_sky_summary
       - sensor.dark_sky_temperature
-
-scene:
-  name: Sunset Scene
-  entities:
-    group.livingroomoverhead:
-      state: on
-      transition: 120
-      brightness: 80
-    light.living_room_lamp:
-      state: on
-      transition: 120
-      brightness: 200
-    switch.patio_lamp:
-      state: on
-    switch.salt_lamp:
-      state: on
-
-scene 2:
-  name: Power Down Scene
-  entities:
-    group.livingroom:
-      state: off
-      transition: 120
-    switch.patio_lamp:
-      state: off
-    group.basement:
-      state: off
-
-scene 3:
-  name: Bedtime Scene
-  entities:
-    group.livingroomoverhead:
-      state: off
-      transition: 30
-    light.living_room_lamp:
-      state: off
-      transition: 60
-    switch.patio_lamp:
-      state: off
-    switch.television:
-      state: off
-    group.bedroom_lights:
-      state: on
-      transition: 120
-      brightness: 200
-    group.basement:
-      state: off
-    switch.stereo_bluetooth_adapter:
-      state: off
-
-scene 4:
-  name: Work Scene
-  entities:
-    group.officelights:
-      state: on
-      brightness: 210
-      transition: 30
-
-scene 5:
-  name: Sunrise Scene
-  entities:
-    switch.salt_lamp:
-      state: off
 
 digital_ocean:
   access_token: !secret digital_ocean_api_token

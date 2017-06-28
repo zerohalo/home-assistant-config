@@ -1,0 +1,5 @@
+- name: Cabin
+  latitude: !secret cabinlatitude
+  longitude: !secret cabinlongitude
+  radius: 300
+  icon: mdi:home-variant

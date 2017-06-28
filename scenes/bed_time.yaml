@@ -1,0 +1,20 @@
+- name: Bedtime Scene
+  entities:
+    group.livingroomoverhead:
+      state: off
+      transition: 30
+    light.living_room_lamp:
+      state: off
+      transition: 60
+    switch.patio_lamp:
+      state: off
+    switch.television:
+      state: off
+    group.bedroom_lights:
+      state: on
+      transition: 120
+      brightness: 200
+    group.basement:
+      state: off
+    switch.stereo_bluetooth_adapter:
+      state: off

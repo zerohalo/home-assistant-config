@@ -1,0 +1,6 @@
+- platform: mqtt_room
+  device_id: alan_phone
+  name: 'Alan'
+  state_topic: 'room_presence'
+  timeout: 5
+  away_timeout: 60
