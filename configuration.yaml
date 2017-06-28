@@ -37,6 +37,12 @@ automation: !include_dir_list automations/
 
 scene: !include_dir_merge_list scenes/
 
+sensor: !include_dir_merge_list sensors/
+
+device_tracker: !include device_trackers.yaml
+
+switch: !include_dir_merge_list switches
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
@@ -53,10 +59,6 @@ mqtt:
     payload: 'offline'
     qos: 1
     retain: true
-
-sensor: !include_dir_merge_list sensors/
-
-device_tracker: !include device_trackers.yaml
 
 # phillips hue bridge
 light:
@@ -76,8 +78,6 @@ emulated_hue:
   exposed_domains:
     - switch
     - scene
-
-switch: !include_dir_merge_list switches
 
 # media players
 media_player:
