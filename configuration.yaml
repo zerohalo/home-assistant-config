@@ -245,20 +245,19 @@ sensor:
 # device trackers
 
 device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 100
-    waypoints: True
-    waypoint_whitelist: !secret waypoint_whitelist
-    home_interval: 45
-  - platform: mqtt
+  - platform: mqtt_json
     devices:
-      alan_phone: /zanzito/alan_phone/location
+      alan_phone: zanzito/alan_phone/location
+      robert_phone: zanzito/robert_phone/location
+    consider_home: 180
+    track_new_devices: no
+    interval_seconds: 60
   - platform: netgear
     host: !secret netgear_host
     port: !secret netgear_port
     username: !secret netgear_username
     password: !secret netgear_password
-    interval_seconds: 30
+    interval_seconds: 60
     consider_home: 180
     track_new_devices: no
 
