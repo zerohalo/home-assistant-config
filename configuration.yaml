@@ -1,91 +1,36 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret homelatitude
   longitude: !secret homelongitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: !secret elevation
-  # metric for Metric, imperial for Imperial
   unit_system: imperial
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
-  customize:
-    switch.patio_lamp:
-      icon: mdi:lamp
-    switch.salt_lamp:
-      icon: mdi:lamp
-    switch.roku:
-      icon: mdi:television-guide
-    switch.television:
-      icon: mdi:television
-    switch.music:
-      icon: mdi:music-note
-    switch.stereo:
-      icon: mdi:music-note
-    switch.playstation:
-      icon: mdi:gamepad-variant
-    scene.sunset_scene:
-      icon: mdi:weather-sunset
-    scene.work_scene:
-      icon: mdi:worker
-    scene.bedtime_scene:
-      icon: mdi:hotel
-    scene.power_down_scene:
-      icon: mdi:power
-    binary_sensor.tungsten:
-      icon: mdi:laptop
-    binary_sensor.meet:
-      icon: mdi:laptop
-    scene.sunrise_scene:
-      icon: mdi:weather-sunset-up
-    sensor.printer_status:
-      icon: mdi:printer
-    sensor.page_counter:
-      icon: mdi:book-open-page-variant
-    sensor.cartridge:
-      icon: mdi:printer-alert
-    switch.stereo_bluetooth_adapter:
-      icon: mdi:music-note-bluetooth
-    switch.security:
-      icon: mdi:camera
+  customize: !include_dir_merge_named customizations
 
 zone: !include_dir_merge_list zones
 
-# Show links to resources in log and frontend
-#introduction:
-
-# bonjour/avahi
 zeroconf:
 
-# Enables the frontend
 frontend:
 
 http:
-  # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
   use_x_forwarded_for: true
   ip_ban_enabled: true
   login_attempts_threshold: 3
   #trusted_networks: !secret home_networks
 
-# Checks for available updates
 updater:
   reporting: no
 
-# Discover some devices automatically
 discovery:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# Enables support for tracking state changes over time.
 history:
 
-# View all events in a logbook
 logbook:
 
-# Track the sun
 sun:
 
 automation: !include_dir_list automations/

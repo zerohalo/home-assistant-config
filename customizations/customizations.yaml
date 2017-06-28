@@ -1,0 +1,38 @@
+switch.patio_lamp:
+  icon: mdi:lamp
+switch.salt_lamp:
+  icon: mdi:lamp
+switch.roku:
+  icon: mdi:television-guide
+switch.television:
+  icon: mdi:television
+switch.music:
+  icon: mdi:music-note
+switch.stereo:
+  icon: mdi:music-note
+switch.playstation:
+  icon: mdi:gamepad-variant
+scene.sunset_scene:
+  icon: mdi:weather-sunset
+scene.work_scene:
+  icon: mdi:worker
+scene.bedtime_scene:
+  icon: mdi:hotel
+scene.power_down_scene:
+  icon: mdi:power
+binary_sensor.tungsten:
+  icon: mdi:laptop
+binary_sensor.meet:
+  icon: mdi:laptop
+scene.sunrise_scene:
+  icon: mdi:weather-sunset-up
+sensor.printer_status:
+  icon: mdi:printer
+sensor.page_counter:
+  icon: mdi:book-open-page-variant
+sensor.cartridge:
+  icon: mdi:printer-alert
+switch.stereo_bluetooth_adapter:
+  icon: mdi:music-note-bluetooth
+switch.security:
+  icon: mdi:camera
