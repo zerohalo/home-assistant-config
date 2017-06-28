@@ -100,6 +100,8 @@ logbook:
 # Track the sun
 sun:
 
+automation: !include_dir_list automations/
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
@@ -572,76 +574,6 @@ group:
     entities:
       - sensor.dark_sky_summary
       - sensor.dark_sky_temperature
-
-automation:
-  alias: Sunset Lights On
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "-00:15:00"
-  condition:
-    condition: state
-    entity_id: group.livingroomoverhead
-    state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.sunset_scene
-    - service: notify.living_room_tv
-      data:
-        message: "The sun is about to set. Turning on some lights."
-        title: "Sunset"
-    - service: notify.bedroom_tv
-      data:
-        message: "The sun is about to set. Turning on some lights."
-        title: "Sunset"
-
-automation 2:
-  alias: Late Night Power Down
-  trigger:
-    platform: time
-    at: '01:30:00'
-  condition:
-    condition: state
-    entity_id: group.livingroomoverhead
-    state: 'on'
-  action:
-    service: scene.turn_on
-    entity_id: scene.power_down_scene
-
-automation 3:
-  alias: Work Lights On
-  trigger:
-    platform: time
-    at: '08:00:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: group.officelights
-        state: 'off'
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      - condition: state
-        entity_id: 'device_tracker.alan_phone'
-        state: 'home'
-  action:
-    service: scene.turn_on
-    entity_id: scene.work_scene
-
-automation 4:
-  alias: Sunrise Stuff
-  trigger:
-    platform: sun
-    event: sunrise
-    offset: "+00:30:00"
-  action:
-    service: scene.turn_on
-    entity_id: scene.sunrise_scene
 
 scene:
   name: Sunset Scene

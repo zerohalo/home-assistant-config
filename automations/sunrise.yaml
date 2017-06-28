@@ -1,0 +1,8 @@
+alias: Sunrise Stuff
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: "+00:30:00"
+action:
+  - service: scene.turn_on
+    entity_id: scene.sunrise_scene

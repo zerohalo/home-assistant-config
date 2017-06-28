@@ -1,0 +1,23 @@
+alias: Work Lights On
+trigger:
+  - platform: time
+    at: '08:00:00'
+condition:
+  - condition: and
+    conditions:
+      - condition: state
+        entity_id: group.officelights
+        state: 'off'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: 'device_tracker.alan_phone'
+        state: 'home'
+action:
+  - service: scene.turn_on
+    entity_id: scene.work_scene

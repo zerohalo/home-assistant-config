@@ -1,0 +1,20 @@
+alias: Sunset Lights On
+trigger:
+  - platform: sun
+    event: sunset
+    offset: "-00:15:00"
+condition:
+  - condition: state
+    entity_id: group.livingroomoverhead
+    state: 'off'
+action:
+  - service: scene.turn_on
+    entity_id: scene.sunset_scene
+  - service: notify.living_room_tv
+    data:
+      message: "The sun is about to set. Turning on some lights."
+      title: "Sunset"
+  - service: notify.bedroom_tv
+    data:
+      message: "The sun is about to set. Turning on some lights."
+      title: "Sunset"
