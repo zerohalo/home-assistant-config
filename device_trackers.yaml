@@ -1,7 +1,7 @@
 - platform: mqtt_json
   devices:
     alan_phone: zanzito/alan_phone/location
-    robert_phone: zanzito/robert_phone/location
+#    robert_phone: zanzito/robert_phone/location
   consider_home: 180
   track_new_devices: no
   interval_seconds: 60
