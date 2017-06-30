@@ -317,9 +317,6 @@ weblink:
     - name: Router Configuration
       url: !secret router_url
       icon: mdi:router-wireless
-    - name: CloudMQTT Console
-      url: !secret cloudmqtt_url
-      icon: mdi:message-settings-variant
     - name: Plex Web
       url: !secret plex_url
       icon: mdi:plex
