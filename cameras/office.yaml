@@ -1,0 +1,5 @@
+- platform: mjpeg
+  name: Office Camera
+  mjpeg_url: !secret mjpeg_camera_3_url
+  username: !secret mjpeg_camera_3_username
+  password: !secret mjpeg_camera_3_password

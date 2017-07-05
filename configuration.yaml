@@ -47,6 +47,8 @@ notify: !include_dir_merge_list notifications/
 
 group: !include_dir_merge_named groups/
 
+camera: !include_dir_merge_list cameras/
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
@@ -135,21 +137,4 @@ weblink:
     - name: Headphones
       url: !secret headphones_url
       icon: mdi:music-note
-
-camera:
-  - platform: mjpeg
-    name: Front Yard Camera
-    mjpeg_url: !secret mjpeg_camera_1_url
-    username: !secret mjpeg_camera_1_username
-    password: !secret mjpeg_camera_1_password
-  - platform: mjpeg
-    name: Living Room Camera
-    mjpeg_url: !secret mjpeg_camera_2_url
-    username: !secret mjpeg_camera_2_username
-    password: !secret mjpeg_camera_2_password
-  - platform: mjpeg
-    name: Office Camera
-    mjpeg_url: !secret mjpeg_camera_3_url
-    username: !secret mjpeg_camera_3_username
-    password: !secret mjpeg_camera_3_password
 
