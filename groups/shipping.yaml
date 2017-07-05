@@ -1,7 +1,7 @@
-- shipping:
-    name: Shipping
-    view: no
-    entities:
-      - sensor.usps
-      - sensor.ups
-      - sensor.fedex
+shipping:
+  name: Shipping
+  view: no
+  entities:
+    - sensor.usps
+    - sensor.ups
+    - sensor.fedex

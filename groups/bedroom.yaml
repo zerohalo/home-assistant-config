@@ -1,11 +1,11 @@
-- bedroom:
-    view: yes
-    entities:
-      group.bedroomlights
+bedrom:
+  view: yes
+  entities:
+    - group.bedroomlights
 
-- bedroomlights:
-    name: Bed Room Lights
-    view: no
-    entities:
-      - light.bedroom_1
-      - light.bedroom_2
+bedroomlights:
+  name: Bed Room Lights
+  view: no
+  entities:
+    - light.bedroom_1
+    - light.bedroom_2

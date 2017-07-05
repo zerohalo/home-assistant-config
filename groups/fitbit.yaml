@@ -1,9 +1,9 @@
-- alanfitbit:
-    name: Alan's Fitbit Data
-    view: no
-    entities:
-      - sensor.body_weight
-      - sensor.body_fat
-      - sensor.steps
-      - sensor.resting_heart_rate
-      - sensor.sleep_efficiency
+alanfitbit:
+  name: Alan's Fitbit Data
+  view: no
+  entities:
+    - sensor.body_weight
+    - sensor.body_fat
+    - sensor.steps
+    - sensor.resting_heart_rate
+    - sensor.sleep_efficiency

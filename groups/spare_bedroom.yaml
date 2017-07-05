@@ -1,13 +1,13 @@
-- sparebedroom:
-    name: Spare Bedroom
-    view: yes
-    entities:
-      - group.sparebedroomlights
+sparebedroom:
+  name: Spare Bedroom
+  view: yes
+  entities:
+    - group.sparebedroomlights
 
-- sparebedroomlights:
-    name: Spare Bedroom Lights
-    view: no
-    entities:
-      - light.spare_bedroom_1
-      - light.spare_bedroom_2
+sparebedroomlights:
+  name: Spare Bedroom Lights
+  view: no
+  entities:
+    - light.spare_bedroom_1
+    - light.spare_bedroom_2
 

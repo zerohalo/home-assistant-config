@@ -94,7 +94,7 @@ remote:
     host: !secret harmonyhubip
 
 # groups
-group: !include_dir_merge_list groups/
+group: !include_dir_merge_named groups/
 
 digital_ocean:
   access_token: !secret digital_ocean_api_token

@@ -1,32 +1,32 @@
-- basement:
-    name: Basement
-    view: yes
-    entities:
-      - group.basementlights
-      - light.laundry
+basement:
+  name: Basement
+  view: yes
+  entities:
+    - group.basementlights
+    - light.laundry
 
-- basementlights:
-    name: Basement Lights
-    view: no
-    entities:
-      - light.basement_stairs
-      - light.basement_middle
-      - light.basement_front
-      - light.basement_rear_left
-      - light.basement_rear_right
-      - light.laundry
+basementlights:
+  name: Basement Lights
+  view: no
+  entities:
+    - light.basement_stairs
+    - light.basement_middle
+    - light.basement_front
+    - light.basement_rear_left
+    - light.basement_rear_right
+    - light.laundry
 
-- laundryroom:
-    name: Laundry Room Lights
-    view: no
-    entities:
-      - light.laundry
-      - light.basement_stairs
-      - light.basement_middle
+laundryroom:
+  name: Laundry Room Lights
+  view: no
+  entities:
+    - light.laundry
+    - light.basement_stairs
+    - light.basement_middle
 
-- pantry:
-    name: Pantry Lights
-    view: no
-    entities:
-      - light.basement_stairs
-      - light.basement_middle
+pantry:
+  name: Pantry Lights
+  view: no
+  entities:
+    - light.basement_stairs
+    - light.basement_middle

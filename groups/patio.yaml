@@ -1,11 +1,11 @@
-- patio:
-    name: Patio
-    view: yes
-    entities:
-      - group.patiolights
+patio:
+  name: Patio
+  view: yes
+  entities:
+    - group.patiolights
 
-- patiolights:
-    name: Patio Lights
-    view: no
-    entities:
-      - switch.patio_lamp
+patiolights:
+  name: Patio Lights
+  view: no
+  entities:
+    - switch.patio_lamp
