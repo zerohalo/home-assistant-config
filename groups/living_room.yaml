@@ -1,0 +1,17 @@
+- livingroom:
+    name: Living Room
+    view: yes
+    entities:
+      - group.livingroomoverhead
+      - light.living_room_lamp
+      - switch.salt_lamp
+      - switch.stereo_bluetooth_adapter
+
+- livingroomoverhead:
+    name: Living Room Overhead Lights
+    view: no
+    entities:
+      - light.living_room__front_left
+      - light.living_room__front_right
+      - light.living_room__rear_left
+      - light.living_room__rear_right

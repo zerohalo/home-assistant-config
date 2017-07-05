@@ -1,0 +1,6 @@
+- people:
+    name: People
+    view: no
+    entities:
+      - device_tracker.alan_phone
+      - device_tracker.robert_phone

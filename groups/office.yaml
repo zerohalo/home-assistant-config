@@ -1,0 +1,48 @@
+- office:
+    name: Office
+    view: yes
+    entities:
+      - group.officelights
+      - group.system
+      - group.server_stats
+      - group.printer_stats
+      - group.nas
+      - group.packages
+
+- officelights:
+    name: Office Lights
+    view: no
+    entities:
+      - light.office_1
+      - light.office_2
+
+- nas:
+    name: NAS
+    entities:
+      - sensor.titanium_status
+      - sensor.titanium_cpu_usage
+      - sensor.titanium_memory_usage
+      - sensor.titanium_volume_used_titanium
+
+- system:
+    name: System Stats
+    view: no
+    entities:
+      - sensor.cpu_use
+      - sensor.ram_use
+
+- server_stats:
+    name: Server Status
+    view: no
+    entities:
+      - sensor.sabnzbd_status
+      - sensor.sabnzbd_speed
+      - sensor.sabnzbd_queue
+      - sensor.plex_info
+
+- printer_stats:
+    name: Printer Status
+    entities:
+      - sensor.printer_status
+      - sensor.page_counter
+      - sensor.cartridge
