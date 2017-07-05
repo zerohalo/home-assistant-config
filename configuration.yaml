@@ -87,9 +87,6 @@ media_player:
       - media_player.roku_1gh31e025621
       - media_player.55h6sg
       - media_player.living_room_roku
-  - platform: cast
-    name: Office Chromecast
-    host: !secret chromecastip
 
 remote:
   - platform: harmony
