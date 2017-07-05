@@ -1,4 +1,4 @@
-bedrom:
+bedroom:
   view: yes
   entities:
     - group.bedroomlights
