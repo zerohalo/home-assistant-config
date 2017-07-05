@@ -41,7 +41,11 @@ sensor: !include_dir_merge_list sensors/
 
 device_tracker: !include device_trackers.yaml
 
-switch: !include_dir_merge_list switches
+switch: !include_dir_merge_list switches/
+
+notify: !include_dir_merge_list notifications/
+
+group: !include_dir_merge_named groups/
 
 # MQTT
 mqtt:
@@ -92,9 +96,6 @@ remote:
   - platform: harmony
     name: Living Room
     host: !secret harmonyhubip
-
-# groups
-group: !include_dir_merge_named groups/
 
 digital_ocean:
   access_token: !secret digital_ocean_api_token
@@ -152,20 +153,3 @@ camera:
     username: !secret mjpeg_camera_3_username
     password: !secret mjpeg_camera_3_password
 
-notify:
-#  - platform: telegram
-#    name: telegram_alan
-#    api_key: !secret telegram_api_key
-#    chat_id: !secret telegram_alan_chat_id
-  - platform: nfandroidtv
-    name: Living Room TV
-    host: !secret nfandroidhost1
-    color: grey
-    transparency: 50%
-    position: top-right
-  - platform: nfandroidtv
-    name: Bedroom TV
-    host: !secret nfandroidhost2
-    color: grey
-    transparency: 50%
-    position: top-right

@@ -1,0 +1,6 @@
+- platform: nfandroidtv
+  name: Living Room TV
+  host: !secret nfandroidhost1
+  color: grey
+  transparency: 50%
+  position: top-right

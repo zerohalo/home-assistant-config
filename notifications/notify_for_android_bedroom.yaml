@@ -1,0 +1,6 @@
+- platform: nfandroidtv
+  name: Bedroom TV
+  host: !secret nfandroidhost2
+  color: grey
+  transparency: 50%
+  position: top-right
