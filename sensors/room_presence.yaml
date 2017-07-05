@@ -1,6 +1,12 @@
-- platform: mqtt_room
-  device_id: alan_phone
-  name: 'Alan'
-  state_topic: 'room_presence'
-  timeout: 5
-  away_timeout: 60
+- platform: rest
+  resource: !secret alan_phone_room
+  value_template: '{{ value_json.users.alan_phone[0].location }}'
+  method: GET
+  name: Alan's Phone - Room
+  scan_interval: 1
+- platform: rest
+  resource: !secret alan_tablet_room
+  value_template: '{{ value_json.users.alan_tablet[0].location }}'
+  method: GET
+  name: Alan's Tablet - Room
+  scan_interval: 1
