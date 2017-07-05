@@ -49,6 +49,8 @@ group: !include_dir_merge_named groups/
 
 camera: !include_dir_merge_list cameras/
 
+binary_sensor: !include_dir_merge_list binary_sensors/
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
@@ -101,12 +103,6 @@ remote:
 
 digital_ocean:
   access_token: !secret digital_ocean_api_token
-
-binary_sensor:
-  - platform: digital_ocean
-    droplets: !secret digital_ocean_droplets
-  - platform: aurora
-    forecast_threshold: 70
 
 weblink:
   entities:
