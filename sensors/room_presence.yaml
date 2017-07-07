@@ -3,10 +3,10 @@
   value_template: '{{ value_json.users.alan_phone[0].location }}'
   method: GET
   name: Alan's Phone - Room
-  scan_interval: 1
+  scan_interval: 5
 - platform: rest
   resource: !secret alan_tablet_room
   value_template: '{{ value_json.users.alan_tablet[0].location }}'
   method: GET
   name: Alan's Tablet - Room
-  scan_interval: 1
+  scan_interval: 5
