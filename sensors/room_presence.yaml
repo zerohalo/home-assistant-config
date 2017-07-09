@@ -1,12 +1,8 @@
-- platform: rest
-  resource: !secret alan_phone_room
-  value_template: '{{ value_json.users.alan_phone[0].location }}'
-  method: GET
+- platform: mqtt
+  state_topic: !secret alan_phone_room_mqtt_topic
   name: Alan's Phone - Room
-  scan_interval: 5
-- platform: rest
-  resource: !secret alan_tablet_room
-  value_template: '{{ value_json.users.alan_tablet[0].location }}'
-  method: GET
+  value_template: '{{ value_json.location }}'
+- platform: mqtt
+  state_topic: !secret alan_tablet_room_mqtt_topic
+  value_template: '{{ value_json.location }}'
   name: Alan's Tablet - Room
-  scan_interval: 5
