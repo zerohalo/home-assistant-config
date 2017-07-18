@@ -54,6 +54,10 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 recorder:
   db_url: !secret mariadb_url
 
+lametric:
+  client_id: !secret lametric_client_id
+  client_secret: !secret lametric_client_secret
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
