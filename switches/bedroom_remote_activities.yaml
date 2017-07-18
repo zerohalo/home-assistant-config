@@ -1,0 +1,13 @@
+- platform: template
+  switches:
+    bedroom_television:
+      value_template: "{% if is_state('sensor.bedroom_tv', 'Watch TV') %}on{% else %}off{% endif %}"
+      friendly_name: Bedroom Television
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.bedroom
+        data:
+          activity: "26118018"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.bedroom

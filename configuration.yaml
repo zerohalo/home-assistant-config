@@ -102,7 +102,10 @@ media_player:
 remote:
   - platform: harmony
     name: Living Room
-    host: !secret harmonyhubip
+    host: !secret harmony_hub_living_room
+  - platform: harmony
+    name: Bedroom
+    host: !secret harmony_hub_bedroom
 
 digital_ocean:
   access_token: !secret digital_ocean_api_token

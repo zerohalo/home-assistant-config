@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    bedroom_tv:
+      value_template: '{{ states.remote.bedroom.attributes.current_activity }}'
+      friendly_name: 'Bedroom TV'
