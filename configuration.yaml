@@ -51,6 +51,9 @@ camera: !include_dir_merge_list cameras/
 
 binary_sensor: !include_dir_merge_list binary_sensors/
 
+recorder:
+  db_url: !secret mariadb_url
+
 # MQTT
 mqtt:
   broker: !secret mqttbroker
