@@ -6,3 +6,7 @@ trigger:
 action:
   - service: scene.turn_on
     entity_id: scene.sunrise_scene
+  - service: notify.slack_zerohalo
+    data:
+      message: "The sun is up!"
+      title: "Sunrise"

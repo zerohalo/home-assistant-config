@@ -22,3 +22,7 @@ action:
     data:
       message: "Sunset"
       title: "Sunset"
+  - service: notify.slack_zerohalo
+    data:
+      message: "The sun is about to set. Turning on some lights."
+      title: "Sunset"

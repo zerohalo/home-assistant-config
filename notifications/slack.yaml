@@ -1,0 +1,4 @@
+- platform: slack
+  name: slack_zerohalo
+  api_key: !secret slack_zerohalo_api_key
+  default_channel: !secret slack_zerohalo_default_channel
