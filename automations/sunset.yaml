@@ -20,5 +20,5 @@ action:
       title: "Sunset"
   - service: notify.lametric
     data:
-      message: "Sunset Scene Activated"
+      message: "Sunset"
       title: "Sunset"
