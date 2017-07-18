@@ -18,3 +18,7 @@ action:
     data:
       message: "The sun is about to set. Turning on some lights."
       title: "Sunset"
+  - service: notify.lametric
+    data:
+      message: "Sunset Scene Activated"
+      title: "Sunset"
