@@ -21,7 +21,7 @@ OZW_Log.txt
 lib
 tts
 *.conf
-harmony_living_room.conf
+harmony_*.conf
 pyozw.sqlite
 *.pickle
 .*
