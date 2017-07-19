@@ -12,6 +12,120 @@ zone: !include_dir_merge_list zones
 zeroconf:
 
 frontend:
+  themes:
+
+# thanks to https://community.home-assistant.io/u/jmart518 (https://community.home-assistant.io/t/share-your-themes/22018/2)
+
+    red:
+      primary-color: "#f44336"
+    pink:
+      primary-color: "#e91e63"
+    purple:
+      primary-color: "#9c27b0"
+    deep-purple:
+      primary-color: "#673ab7"
+    indigo:
+      primary-color: "#3f51b5"
+    blue:
+      primary-color: "#2196f3"
+    light-blue:
+      primary-color: "#03a9f4"
+    cyan:
+      primary-color: "#00bcd4"
+    teal:
+      primary-color: "#009688"
+    green:
+      primary-color: "#4caf50"
+    light-green:
+      primary-color: "#8bc34a"
+    lime:
+      primary-color: "#cddc39"
+    yellow:
+      primary-color: "#ffeb3b"
+    amber:
+      primary-color: "#ffc107"
+    orange:
+      primary-color: "#ff9800"
+    deep-orange:
+      primary-color: "#ff5722"
+    brown:
+      primary-color: "#795548"
+    grey:
+      primary-color: "#9e9e9e"
+    blue-grey:
+      primary-color: "#607d8b"
+
+# thanks to https://community.home-assistant.io/u/arsaboo (https://github.com/arsaboo/homeassistant-config/blob/master/configuration.yaml#L65_
+
+    minimal:
+      dark-primary-color: "#192231"
+      primary-color: "#98878f"
+      light-primary-color: "#98878f"
+      paper-toggle-button-checked-ink-color: "#494e6b"
+      paper-toggle-button-checked-button-color: "#494e6b"
+      paper-toggle-button-checked-bar-color: "#494e6b"
+      paper-slider-knob-color: "#494e6b"
+      paper-slider-knob-start-color: "#494e6b"
+      paper-slider-pin-color: "#494e6b"
+      paper-slider-active-color: "#494e6b"
+    stormy_hues:
+      dark-primary-color: "#192231"
+      primary-color: "#98878f"
+      light-primary-color: "#98878f"
+      paper-toggle-button-checked-ink-color: "#494e6b"
+      paper-toggle-button-checked-button-color: "#494e6b"
+      paper-toggle-button-checked-bar-color: "#494e6b"
+      paper-slider-knob-color: "#494e6b"
+      paper-slider-knob-start-color: "#494e6b"
+      paper-slider-pin-color: "#494e6b"
+      paper-slider-active-color: "#494e6b"
+    vintage:
+      dark-primary-color: "#373f27"
+      primary-color: "#636b46"
+      light-primary-color: "#e9e7da"
+      paper-toggle-button-checked-ink-color: "#cda34f"
+      paper-toggle-button-checked-button-color: "#cda34f"
+      paper-toggle-button-checked-bar-color: "#cda34f"
+      paper-slider-knob-color: "#cda34f"
+      paper-slider-knob-start-color: "#cda34f"
+      paper-slider-pin-color: "#cda34f"
+      paper-slider-active-color: "#cda34f"
+    done1:
+      dark-primary-color: "#565656"
+      primary-color: "#C09F80"
+      light-primary-color: "#D7CEC7"
+      paper-toggle-button-checked-ink-color: "#76323F"
+      paper-toggle-button-checked-button-color: "#76323F"
+      paper-toggle-button-checked-bar-color: "#76323F"
+      paper-slider-knob-color: "#76323F"
+      paper-slider-knob-start-color: "#76323F"
+      paper-slider-pin-color: "#76323F"
+      paper-slider-active-color: "#76323F"
+      paper-slider-secondary-color: "#FFE0B2"
+
+# thanks to https://community.home-assistant.io/u/ahs (https://community.home-assistant.io/t/share-your-themes/22018/6)
+
+    ahs:
+      primary-color: '#333577'
+      primary-text-color: '#090A3B'
+      paper-grey-50: '#DEDEDE'
+      primary-background-color: '#FFFFFF'
+      text-primary-color: '#FFFFFF'
+      paper-toggle-button-checked-button-color: '#FFD700'
+      paper-toggle-button-checked-bar-color: '#FFA726'
+      paper-toggle-button-checked-ink-color: '#FFA726'
+      paper-toggle-button-unchecked-button-color: '#EAEAEA'
+      paper-toggle-button-unchecked-bar-color: '#DEDEDE'
+      paper-toggle-button-unchecked-ink-color: '#DEDEDE'
+      paper-slider-knob-color: '#FFD700'
+      paper-slider-knob-start-color: '#FFD700'
+      paper-slider-pin-color: '#FFD700'
+      paper-slider-active-color: '#FFD393'
+      paper-slider-secondary-color: '#DEDEDE'
+      paper-slider-container-color: '#F2F2F2'
+      ha-label-badge-color: '#DEDEDE'
+      paper-tabs-selection-bar-color: '#DEDEDE'
+
 
 http:
   api_password: !secret http_password

@@ -10,3 +10,7 @@ action:
     data:
       message: "The sun is up!"
       title: "Sunrise"
+  - service: notify.discord_zerohalo
+    data:
+      message: "The sun is up!"
+      title: "Sunrise"
