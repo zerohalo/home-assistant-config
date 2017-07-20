@@ -30,4 +30,4 @@ action:
     data:
       message: "The sun is about to set. Turning on some lights."
       title: "Sunset"
-
+      target: !secret discord_target_notifications

@@ -14,3 +14,4 @@ action:
     data:
       message: "The sun is up!"
       title: "Sunrise"
+      target: !secret discord_target_notifications
