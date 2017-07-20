@@ -6,6 +6,8 @@ switch.roku:
   icon: mdi:television-guide
 switch.television:
   icon: mdi:television
+switch.bedroom_television:
+  icon: mdi:television
 switch.music:
   icon: mdi:music-note
 switch.stereo:
