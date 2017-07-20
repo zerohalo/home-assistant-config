@@ -1,6 +1,7 @@
 bedroom:
   view: yes
   entities:
+    - switch.bedroom_television
     - group.bedroomlights
 
 bedroomlights:
