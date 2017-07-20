@@ -1,0 +1,9 @@
+- platform: nut
+  name: NUT UPS
+  host: !secret nut_ups_host
+  resources:
+    - ups.status
+    - battery.charge
+    - battery.voltage
+    - battery.runtime
+    - input.voltage

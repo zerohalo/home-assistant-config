@@ -1,0 +1,9 @@
+ups_group:
+  name: UPS
+  view: no
+  entities:
+    - sensor.nut_ups_status_data
+    - sensor.nut_ups_battery_charge
+    - sensor.nut_ups_battery_runtime
+    - sensor.nut_ups_battery_voltage
+    - sensor.nut_ups_input_voltage

@@ -8,6 +8,7 @@ office:
     - group.printer_stats
     - group.nas
     - group.packages
+    - group.ups_group
 
 officelights:
   name: Office Lights
