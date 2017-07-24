@@ -1,6 +1,6 @@
 - name: Sunset Scene
   entities:
-    group.livingroomoverhead:
+    group.living_room_overhead:
       state: on
       transition: 120
       brightness: 80

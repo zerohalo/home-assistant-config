@@ -5,7 +5,7 @@ trigger:
     offset: "-00:15:00"
 condition:
   - condition: state
-    entity_id: group.livingroomoverhead
+    entity_id: group.living_room_overhead
     state: 'off'
 action:
   - service: scene.turn_on

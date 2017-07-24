@@ -1,6 +1,6 @@
 - name: Bedtime Scene
   entities:
-    group.livingroomoverhead:
+    group.living_room_overhead:
       state: off
       transition: 30
     light.living_room_lamp:
