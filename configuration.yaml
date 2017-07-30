@@ -251,13 +251,7 @@ weblink:
     - name: Sabnzbd
       url: !secret sabnzbd_url
       icon: mdi:download
-    - name: Couch Potato
-      url: !secret couch_potato_url
-      icon: mdi:movie
     - name: Sonarr
       url: !secret sonarr_url
       icon: mdi:television-guide
-    - name: Headphones
-      url: !secret headphones_url
-      icon: mdi:music-note
 
