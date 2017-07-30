@@ -199,9 +199,6 @@ light:
 
 # emulated hue bridge
 emulated_hue:
-  #no longer using this because removed --net=host from run
-  #host_ip: !secret emulated_hue_host_ip
-  type: alexa
   advertise_ip: !secret emulated_hue_advertise_ip
   listen_port: !secret emulated_hue_listen_port
   off_maps_to_on_domains:
