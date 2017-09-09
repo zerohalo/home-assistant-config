@@ -1,7 +1,0 @@
-- platform: fitbit
-  monitored_resources:
-    - "body/weight"
-    - "body/fat"
-    - "activities/steps"
-    - "activities/heart"
-    - "sleep/efficiency"
