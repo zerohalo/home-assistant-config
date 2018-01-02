@@ -1,0 +1,16 @@
+- platform: netatmo
+  station: Home
+  modules:
+    outside:
+      - temperature
+      - humidity
+      - pressure
+      - radio
+      - battery
+    indoor:
+      - temperature
+      - humidity
+      - pressure
+      - co2
+      - noise
+      - wifi

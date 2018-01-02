@@ -193,11 +193,12 @@ mqtt:
     qos: 1
     retain: true
 
-# phillips hue bridge
-light:
-  platform: hue
-  host: !secret hue_host_ip
-  allow_unreachable: true
+hue:
+  bridges:
+    - host: !secret hue_host_ip
+      allow_unreachable: true
+      allow_in_emulated_hue: false
+      allow_hue_groups: false
 
 # emulated hue bridge
 emulated_hue:
@@ -257,3 +258,8 @@ weblink:
       url: !secret sonarr_url
       icon: mdi:television-guide
 
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
