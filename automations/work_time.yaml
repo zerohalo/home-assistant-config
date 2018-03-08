@@ -1,7 +1,7 @@
 alias: Work Lights On
 trigger:
   - platform: time
-    at: '08:00:00'
+    at: '07:15:00'
 condition:
   - condition: and
     conditions:
