@@ -1,11 +1,3 @@
-- platform: mqtt_json
-  devices:
-    alan_phone: zanzito/alan_phone/location
-    alan_tablet: zanzito/alan_tablet/location
-#    robert_phone: zanzito/robert_phone/location
-  consider_home: 180
-  track_new_devices: no
-  interval_seconds: 60
 - platform: netgear
   host: !secret netgear_host
   port: !secret netgear_port

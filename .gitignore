@@ -10,6 +10,7 @@ fitbit.conf
 emulated_hue_ids.json
 ip_bans.yaml
 home-assistant.log
+entity_registry.yaml
 *.pid
 *.xml
 *.csr

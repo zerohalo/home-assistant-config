@@ -197,7 +197,6 @@ hue:
   bridges:
     - host: !secret hue_host_ip
       allow_unreachable: true
-      allow_in_emulated_hue: false
       allow_hue_groups: false
 
 # emulated hue bridge
