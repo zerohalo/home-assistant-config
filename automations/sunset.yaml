@@ -31,3 +31,7 @@ action:
       message: "The sun is about to set. Turning on some lights."
       title: "Sunset"
       target: !secret discord_target_notifications
+  - service: notify.joao_apps
+    data:
+      message: "The sun is about to set. Turning on some lights."
+      title: "Sunset"

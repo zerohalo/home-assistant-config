@@ -2,7 +2,3 @@
   state_topic: !secret alan_phone_room_mqtt_topic
   name: Alan's Phone - Room
   value_template: '{{ value_json.location }}'
-- platform: mqtt
-  state_topic: !secret alan_tablet_room_mqtt_topic
-  value_template: '{{ value_json.location }}'
-  name: Alan's Tablet - Room

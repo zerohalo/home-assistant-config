@@ -262,3 +262,7 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
+
+joaoapps_join:
+  - name: Home Assistant
+    api_key: !secret joaoapps_join_api_key
