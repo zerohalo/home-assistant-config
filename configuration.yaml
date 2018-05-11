@@ -214,13 +214,11 @@ emulated_hue:
     - scene
 
 # media players
-media_player:
-  - platform: universal
-    name: Living Room Media
-    children:
-      - media_player.roku_1gh31e025621
-      - media_player.55h6sg
-      - media_player.living_room_roku
+#media_player:
+#  - platform: universal
+#    name: Living Room Media
+#    children:
+#      - media_player.55h6sg
 
 remote:
   - platform: harmony
