@@ -7,4 +7,5 @@
       state: off
     group.basement:
       state: off
-
+    group.bedroomlights:
+      state: off

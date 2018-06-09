@@ -26,6 +26,8 @@ tts
 harmony_*.conf
 pyozw.sqlite
 *.pickle
-.*
+.HA_VERSION
+.config_entries.json
+home-assistant_v2.db*
 !/.gitignore
 
