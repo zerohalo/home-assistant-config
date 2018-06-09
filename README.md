@@ -9,5 +9,3 @@ Note: this configuration is running on bleeding-edge dev and is constantly evolv
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=plastic)](https://github.com/zerohalo/home-assistant-config/commits/master)
 
-
-[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=plastic&label=Stars)](https://github.com/zerohalo/home-assistant-config/stargazers)
