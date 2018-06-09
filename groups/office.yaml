@@ -9,6 +9,7 @@ office:
     - group.nas
     - group.packages
     - group.ups_group
+    - device_tracker.work_laptop
 
 officelights:
   name: Office Lights

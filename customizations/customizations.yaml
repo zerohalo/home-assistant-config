@@ -14,6 +14,12 @@ switch.stereo:
   icon: mdi:music-note
 switch.playstation:
   icon: mdi:gamepad-variant
+switch.nintendo:
+  icon: mdi:gamepad-variant
+switch.watch_music:
+  icon: mdi:music-note
+switch.listen_music:
+  icon: mdi:music-note
 scene.sunset_scene:
   icon: mdi:weather-sunset
 scene.work_scene:

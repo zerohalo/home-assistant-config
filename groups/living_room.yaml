@@ -13,9 +13,10 @@ living_room_entertainment:
   entities:
     - switch.television
     - switch.playstation
-    - switch.roku
-    - switch.music
-    - switch.stereo_bluetooth_adapter
+    - switch.nintendo
+    - switch.listen_music
+    - switch.watch_music
+    
 
 living_room_overhead:
   name: Living Room Overhead Lights

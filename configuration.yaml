@@ -170,7 +170,7 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 wake_on_lan:
 
 recorder:
-  db_url: !secret mariadb_url
+#  db_url: !secret mariadb_url
 
 lametric:
   client_id: !secret lametric_client_id
@@ -214,11 +214,22 @@ emulated_hue:
     - scene
 
 # media players
-#media_player:
-#  - platform: universal
-#    name: Living Room Media
-#    children:
-#      - media_player.55h6sg
+media_player:
+  - platform: onkyo
+    host: !secret onkyo_receiver_host
+    name: Living Room Receiver
+    zone2: false
+    zone3: false
+    sources:
+      video2: 'Nvidia Shield'
+      bd: 'Playstation'
+      game: 'Nintendo Switch'
+      net: 'Network Stream'
+      #video3: 'Nintendo Switch'
+      fm: 'FM Radio'
+      am: 'AM Radio'
+      bluetooth: 'Bluetooth'
+  - platform: plex
 
 remote:
   - platform: harmony
@@ -233,6 +244,8 @@ digital_ocean:
 
 weblink:
   entities:
+    - name: Node Red Configuration
+      url: !secret node_red_url
     - name: Router Configuration
       url: !secret router_url
       icon: mdi:router-wireless

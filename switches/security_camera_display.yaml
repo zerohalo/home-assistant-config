@@ -1,7 +1,7 @@
-- platform: command_line
-  scan_interval: 60
-  switches:
-    security:
-      friendly_name: Security Cameras
-      command_on: "/bin/bash /config/scripts/camerason.sh"
-      command_off: "/bin/bash /config/scripts/camerasoff.sh"
+#- platform: command_line
+#  scan_interval: 60
+#  switches:
+#    security:
+#      friendly_name: Security Cameras
+#      command_on: "/bin/bash /config/scripts/camerason.sh"
+#      command_off: "/bin/bash /config/scripts/camerasoff.sh"

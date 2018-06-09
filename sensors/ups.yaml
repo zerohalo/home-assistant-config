@@ -1,6 +1,8 @@
 - platform: nut
   name: NUT UPS
   host: !secret nut_ups_host
+  user: !secret nut_ups_user
+  password: !secret nut_ups_password 
   resources:
     - ups.status
     - battery.charge

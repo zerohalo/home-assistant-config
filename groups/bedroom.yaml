@@ -10,3 +10,5 @@ bedroomlights:
   entities:
     - light.bedroom_1
     - light.bedroom_2
+    - light.robbies_lamp
+    - light.alans_lamp

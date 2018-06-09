@@ -7,40 +7,51 @@
         service: remote.turn_on
         entity_id: remote.living_room
         data:
-          activity: "25295743"
-      turn_off:
-        service: remote.turn_off
-        entity_id: remote.living_room
-    roku:
-      value_template: "{% if is_state('sensor.living_room_tv', 'Watch Roku') %}on{% else %}off{% endif %}"
-      friendly_name: Roku
-      turn_on:
-        service: remote.turn_on
-        entity_id: remote.living_room
-        data:
-          activity: "21814656"
+          activity: "33797763"
       turn_off:
         service: remote.turn_off
         entity_id: remote.living_room
     playstation:
-      value_template: "{% if is_state('sensor.living_room_tv', 'Play PS4') %}on{% else %}off{% endif %}"
+      value_template: "{% if is_state('sensor.living_room_tv', 'Play PlayStation') %}on{% else %}off{% endif %}"
       friendly_name: Playstation
       turn_on:
         service: remote.turn_on
         entity_id: remote.living_room
         data:
-          activity: "23177182"
+          activity: "33797789"
       turn_off:
         service: remote.turn_off
         entity_id: remote.living_room
-    music:
+    nintendo:
+      value_template: "{% if is_state('sensor.living_room_tv', 'Play Switch') %}on{% else %}off{% endif %}"
+      friendly_name: Nintendo
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room
+        data:
+          activity: "33797808"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+    listen_music:
       value_template: "{% if is_state('sensor.living_room_tv', 'Listen to Music') %}on{% else %}off{% endif %}"
       friendly_name: Stereo
       turn_on:
         service: remote.turn_on
         entity_id: remote.living_room
         data:
-          activity: "22062061"
+          activity: "33807456"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+    watch_music:
+      value_template: "{% if is_state('sensor.living_room_tv', 'Watch Music') %}on{% else %}off{% endif %}"
+      friendly_name: Visual Stereo
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room
+        data:
+          activity: "33807480"
       turn_off:
         service: remote.turn_off
         entity_id: remote.living_room
