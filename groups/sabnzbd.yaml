@@ -1,0 +1,7 @@
+sabnzbd:
+  name: Sabnzbd
+  view: no
+  entities:
+    - sensor.sabnzbd_status
+    - sensor.sabnzbd_speed
+    - sensor.sabnzbd_queue

@@ -9,6 +9,9 @@ office:
     - group.nas
     - group.packages
     - group.ups_group
+    - group.travisci
+    - group.sabnzbd
+    - group.sonarr
     - device_tracker.work_laptop
 
 officelights:
@@ -37,9 +40,6 @@ server_stats:
   name: Server Status
   view: no
   entities:
-    - sensor.sabnzbd_status
-    - sensor.sabnzbd_speed
-    - sensor.sabnzbd_queue
     - sensor.plex_info
 
 printer_stats:

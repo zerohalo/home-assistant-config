@@ -1,0 +1,8 @@
+sonarr:
+  name: Sonarr
+  view: no
+  entities:
+    - sensor.sonarr_queue
+    - sensor.sonarr_series
+    - sensor.sonarr_upcoming
+    - sensor.sonarr_wanted
