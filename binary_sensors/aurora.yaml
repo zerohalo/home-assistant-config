@@ -1,2 +1,2 @@
-- platform: aurora
-  forecast_threshold: 20
+# - platform: aurora
+#   forecast_threshold: 20
