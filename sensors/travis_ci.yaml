@@ -1,5 +1,4 @@
 - platform: travisci
   api_key: !secret traviscs_api_key
   repository:
-    - zerohalo/home-assistant-config
-
+    - home-assistant-config
