@@ -18,3 +18,9 @@
       state: off
     switch.stereo_bluetooth_adapter:
       state: off
+    switch.01200602dc4f22021389:
+      state: on
+    switch.01200602dc4f22022bd9:
+      state: off
+    switch.0120060260019464e0e5
+      state: off
