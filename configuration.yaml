@@ -273,3 +273,8 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 1

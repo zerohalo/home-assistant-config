@@ -6,6 +6,7 @@ livingroom:
     - group.living_room_entertainment
     - light.living_room_lamp
     - switch.salt_lamp
+    - switch.01200602dc4f22022bd9
 
 living_room_entertainment:
   name: Living Room Entertainment
@@ -15,8 +16,7 @@ living_room_entertainment:
     - switch.playstation
     - switch.nintendo
     - switch.listen_music
-    - switch.watch_music
-    
+    - switch.watch_music    
 
 living_room_overhead:
   name: Living Room Overhead Lights
