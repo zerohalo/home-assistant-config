@@ -1,0 +1,6 @@
+kitchen:
+  name: Kitchen
+  view: yes
+  entities:
+    - switch.0120060260019464e0e5
+
