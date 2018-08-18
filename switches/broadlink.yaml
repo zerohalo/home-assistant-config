@@ -1,0 +1,10 @@
+- platform: broadlink
+  host: !secret broadlink_host
+  mac: !secret broadlink_mac
+  type: rm_mini
+  timeout: 15
+  switches:
+    ac:
+      friendly_name: Air Conditioner
+      command_on: ''
+      command_off: ''

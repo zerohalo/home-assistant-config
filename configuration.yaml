@@ -131,9 +131,9 @@ frontend:
 
 http:
   api_password: !secret http_password
-  use_x_forwarded_for: true
-  ip_ban_enabled: true
-  login_attempts_threshold: 3
+  #use_x_forwarded_for: true
+  #ip_ban_enabled: true
+  #login_attempts_threshold: 3
   #trusted_networks: !secret home_networks
 
 updater:
