@@ -13,6 +13,7 @@ office:
     - group.sabnzbd
     - group.sonarr
     - device_tracker.work_laptop
+    - group.pi_hole
 
 officelights:
   name: Office Lights
