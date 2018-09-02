@@ -9,5 +9,5 @@
       state: off
     group.bedroomlights:
       state: off
-    switch.hutch
+    switch.hutch:
       state: off
