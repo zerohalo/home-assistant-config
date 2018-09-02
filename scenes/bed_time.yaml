@@ -24,3 +24,6 @@
       state: off
     switch.0120060260019464e0e5:
       state: off
+    switch.hutch_10
+      state: on
+
