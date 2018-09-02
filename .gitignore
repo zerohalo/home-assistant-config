@@ -30,4 +30,5 @@ pyozw.sqlite
 .config_entries.json
 home-assistant_v2.db*
 !/.gitignore
+.storage/
 
