@@ -18,10 +18,10 @@ action:
     data:
       message: "The sun is about to set. Turning on some lights."
       title: "Sunset"
-  # - service: notify.my_lametric
-  #   data:
-  #     message: "Sunset"
-  #     title: "Sunset"
+  - service: notify.my_lametric
+    data:
+      message: "Sunset"
+      title: "Sunset"
   # - service: notify.slack_zerohalo
   #   data:
   #     message: "The sun is about to set. Turning on some lights."

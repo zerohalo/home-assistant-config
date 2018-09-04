@@ -2,10 +2,10 @@ alias: Late Night Power Down
 trigger:
   - platform: time
     at: '01:30:00'
-condition:
-  - condition: state
-    entity_id: group.living_room_overhead
-    state: 'on'
+#condition:
+#  - condition: state
+#    entity_id: group.living_room_overhead
+#    state: 'on'
 action:
   - service: scene.turn_on
     entity_id: scene.power_down_scene
