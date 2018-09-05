@@ -16,4 +16,6 @@
       state: on
     switch.hutch_50:
       state: on
+    switch.02200470ecfabc91d314:
+      state: on
 
