@@ -1,8 +1,8 @@
-- platform: netgear
-  host: !secret netgear_host
-  port: !secret netgear_port
-  username: !secret netgear_username
-  password: !secret netgear_password
+- platform: mikrotik
+  host: !secret mikrotik_host
+  port: !secret mikrotik_port
+  username: !secret mikrotik_username
+  password: !secret mikrotik_password
   interval_seconds: 60
   consider_home: 180
   track_new_devices: no
