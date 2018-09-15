@@ -225,7 +225,6 @@ media_player:
       bd: 'Playstation'
       game: 'Nintendo Switch'
       net: 'Network Stream'
-      #video3: 'Nintendo Switch'
       fm: 'FM Radio'
       am: 'AM Radio'
       bluetooth: 'Bluetooth'
@@ -248,6 +247,9 @@ weblink:
       url: !secret node_red_url
     - name: Router Configuration
       url: !secret router_url
+      icon: mdi:router-wireless
+    - name: Unifi Controller
+      url: !secret unifi_url
       icon: mdi:router-wireless
     - name: Plex Web
       url: !secret plex_url
