@@ -9,3 +9,6 @@ trigger:
 action:
   - service: scene.turn_on
     entity_id: scene.power_down_scene
+  - service: lock.lock
+    entity_id: lock.back_door
+
