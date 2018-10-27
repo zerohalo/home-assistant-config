@@ -287,3 +287,9 @@ august:
   username: !secret august_username
   password: !secret august_password
   timeout: 20
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_key
+
