@@ -281,3 +281,9 @@ tuya:
   password: !secret tuya_password
   country_code: 1
   platform: smart_life
+
+august:
+  login_method: email
+  username: !secret august_username
+  password: !secret august_password
+  timeout: 20
