@@ -294,3 +294,7 @@ xiaomi_aqara:
     - key: !secret xiaomi_key
       mac: !secret xiaomi_mac
       host: !secret xiaomi_host
+
+ecobee:
+  api_key: !secret ecobee_api_key
+
