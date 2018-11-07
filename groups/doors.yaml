@@ -5,6 +5,7 @@ doors:
     - binary_sensor.door_window_sensor_158d000232978d
     - binary_sensor.door_window_sensor_158d000243445b
     - binary_sensor.door_window_sensor_158d00024344f6
+    - binary_sensor.door_window_sensor_158d0002370085
     - binary_sensor.back_door_open
     - lock.back_door
 
