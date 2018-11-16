@@ -298,3 +298,7 @@ xiaomi_aqara:
 ecobee:
   api_key: !secret ecobee_api_key
 
+influxdb:
+  host: !secret influxdb_host
+  port: !secret influxdb_port
+  default_measurement: state
