@@ -30,4 +30,4 @@ pyozw.sqlite
 home-assistant_v2.db*
 !/.gitignore
 .storage/
-
+.cloud/
