@@ -31,3 +31,4 @@ home-assistant_v2.db*
 !/.gitignore
 .storage/
 .cloud/
+usps_cache.sqlite
