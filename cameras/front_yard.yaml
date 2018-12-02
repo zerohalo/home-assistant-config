@@ -1,5 +1,3 @@
-- platform: mjpeg
-  name: Front Yard Camera
-  mjpeg_url: !secret mjpeg_camera_1_url
-  username: !secret mjpeg_camera_1_username
-  password: !secret mjpeg_camera_1_password
+#- platform: mjpeg
+#  name: Front Yard Camera
+#  mjpeg_url: !secret front_yard_camera_url

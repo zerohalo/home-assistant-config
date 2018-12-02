@@ -1,5 +1,3 @@
-- platform: mjpeg
-  name: Living Room Camera
-  mjpeg_url: !secret mjpeg_camera_2_url
-  username: !secret mjpeg_camera_2_username
-  password: !secret mjpeg_camera_2_password
+#- platform: mjpeg
+#  name: Living Room Camera
+#  mjpeg_url: !secret living_room_camera_url

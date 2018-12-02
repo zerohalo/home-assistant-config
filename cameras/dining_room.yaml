@@ -1,0 +1,3 @@
+#- platform: mjpeg
+#  name: Dinging Room Camera
+#  mjpeg_url: !secret dining_room_camera_url
