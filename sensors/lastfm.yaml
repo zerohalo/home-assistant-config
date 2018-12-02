@@ -1,0 +1,5 @@
+- platform: lastfm
+  api_key: !secret last_fm_api_key
+  users:
+    - zerohalo
+
