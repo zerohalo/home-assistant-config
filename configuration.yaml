@@ -299,11 +299,11 @@ influxdb:
   port: !secret influxdb_port
   default_measurement: state
 
-ecovacs:
-  username: !secret ecovacs_username
-  password: !secret ecovacs_password
-  country: us
-  continent: na
+#ecovacs:
+#  username: !secret ecovacs_username
+#  password: !secret ecovacs_password
+#  country: us
+#  continent: na
 
 cloud:
 
