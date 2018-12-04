@@ -203,7 +203,6 @@ hue:
 
 # emulated hue bridge
 emulated_hue:
-#  type: alexa
   advertise_ip: !secret emulated_hue_advertise_ip
   advertise_port: !secret emulated_hue_advertise_port
   listen_port: !secret emulated_hue_listen_port
