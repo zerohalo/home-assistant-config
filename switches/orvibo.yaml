@@ -8,6 +8,6 @@
     - host: !secret orvibo_switch_2_host
       mac: !secret orvibo_switch_2_mac
       name: "Salt Lamp"
-    - host: !secret orvibo_switch_3_host
-      mac: !secret orvibo_switch_3_mac
-      name: "Stereo Bluetooth Adapter"
+#    - host: !secret orvibo_switch_3_host
+#      mac: !secret orvibo_switch_3_mac
+#      name: "Stereo Bluetooth Adapter"
