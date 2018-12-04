@@ -3,4 +3,5 @@ kitchen:
   view: yes
   entities:
     - switch.0120060260019464e0e5
-
+    - sensor.kitchen_temperature
+    - binary_sensor.kitchen_occupancy

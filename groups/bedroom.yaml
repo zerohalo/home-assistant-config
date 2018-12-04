@@ -4,6 +4,8 @@ bedroom:
     - switch.bedroom_television
     - group.bedroomlights
     - switch.01200602dc4f22021389
+    - sensor.bedroom_temperature
+    - binary_sensor.bedroom_occupancy
 
 bedroomlights:
   name: Bed Room Lights

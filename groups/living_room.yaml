@@ -7,6 +7,8 @@ livingroom:
     - light.living_room_lamp
     - switch.salt_lamp
     - switch.01200602dc4f22022bd9
+    - sensor.living_room_temperature
+    - binary_sensor.living_room_occupancy
 
 living_room_entertainment:
   name: Living Room Entertainment
