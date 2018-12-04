@@ -4,4 +4,5 @@
   port: !secret plex_host_port
   username: !secret plex_user
   password: !secret plex_password
-  server: iron
+  server: titanium
+  token: !secret plex_token
