@@ -1,0 +1,17 @@
+media:
+  view: yes
+  entities:
+    - media_player.cast_group
+    - media_player.copper
+    - media_player.mercury
+    - media_player.googlehomehub1972
+    - media_player.googlehomehub2836
+    - media_player.office_home
+    - media_player.living_room_mini
+    - media_player.googlehome6072
+    - media_player.onkyo_txnr676_ea460b
+    - media_player.living_room_receiver
+    - media_player.living_room_receiver_zone_2
+    - media_player.living_room_receiver_zone_3
+    - media_player.pixel_2
+
