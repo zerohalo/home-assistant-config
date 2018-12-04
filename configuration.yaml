@@ -203,7 +203,7 @@ hue:
 
 # emulated hue bridge
 emulated_hue:
-  type: alexa
+#  type: alexa
   advertise_ip: !secret emulated_hue_advertise_ip
   advertise_port: !secret emulated_hue_advertise_port
   listen_port: !secret emulated_hue_listen_port
@@ -256,9 +256,6 @@ weblink:
     - name: Plex Web
       url: !secret plex_url
       icon: mdi:plex
-    - name: Subsonic Web
-      url: !secret subsonic_url
-      icon: mdi:music-note
     - name: Sabnzbd
       url: !secret sabnzbd_url
       icon: mdi:download
