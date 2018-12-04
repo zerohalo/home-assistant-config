@@ -5,4 +5,5 @@ people:
     - device_tracker.alan_phone
     - device_tracker.robert_phone
     - device_tracker.ellen_ipad
+    - device_tracker.ellen_phone
     - device_tracker.christy_phone
