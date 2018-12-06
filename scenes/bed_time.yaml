@@ -26,4 +26,5 @@
       state: off
     switch.hutch_10:
       state: on
-
+    light.gateway_light_7c49eb1a7cf5:
+      state: on
