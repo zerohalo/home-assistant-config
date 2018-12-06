@@ -13,3 +13,5 @@
       state: off
     switch.02200470ecfabc91d314:
       state: off
+    light.gateway_light_7c49eb1a7cf5:
+      state: on

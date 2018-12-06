@@ -2,3 +2,5 @@
   entities:
     switch.salt_lamp:
       state: off
+    light.gateway_light_7c49eb1a7cf5:
+      state: off
