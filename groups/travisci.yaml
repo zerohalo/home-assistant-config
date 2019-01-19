@@ -2,9 +2,9 @@ travisci:
   name: Travis CI
   view: no
   entities:
-    - sensor.zerohalohomeassistantconfig_last_build_duration
-    - sensor.zerohalohomeassistantconfig_last_build_finished_at
-    - sensor.zerohalohomeassistantconfig_last_build_id
-    - sensor.zerohalohomeassistantconfig_last_build_started_at
-    - sensor.zerohalohomeassistantconfig_last_build_state
-    - sensor.zerohalohomeassistantconfig_state
+    - sensor.zerohalo_home_assistant_config_last_build_duration
+    - sensor.zerohalo_home_assistant_config_last_build_finished_at
+    - sensor.zerohalo_home_assistant_config_last_build_id
+    - sensor.zerohalo_home_assistant_config_last_build_started_at
+    - sensor.zerohalo_home_assistant_config_last_build_state
+    - sensor.zerohalo_home_assistant_config_state
