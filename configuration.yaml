@@ -13,6 +13,8 @@ zeroconf:
 
 config:
 
+system_health:
+
 frontend:
   themes:
 

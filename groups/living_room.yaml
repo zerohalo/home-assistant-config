@@ -24,7 +24,7 @@ living_room_overhead:
   name: Living Room Overhead Lights
   view: no
   entities:
-    - light.living_room__front_left
-    - light.living_room__front_right
-    - light.living_room__rear_left
-    - light.living_room__rear_right
+    - light.living_room_front_left
+    - light.living_room_front_right
+    - light.living_room_rear_left
+    - light.living_room_rear_right
