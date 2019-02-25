@@ -10,6 +10,8 @@
       state: off
     switch.television:
       state: off
+    switch.pretty_lamp:
+      state: off
     group.bedroom_lights:
       state: on
       transition: 120

@@ -12,6 +12,8 @@
       state: on
     switch.salt_lamp:
       state: on
+    switch.pretty_lamp:
+      state: on
     switch.hutch:
       state: on
     switch.hutch_50:
