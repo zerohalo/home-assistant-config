@@ -221,8 +221,6 @@ media_player:
   - platform: onkyo
     host: !secret onkyo_receiver_host
     name: Living Room Receiver
-    zone2: false
-    zone3: false
     sources:
       video2: 'Nvidia Shield'
       bd: 'Playstation'

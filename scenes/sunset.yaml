@@ -12,7 +12,7 @@
       state: on
     switch.salt_lamp:
       state: on
-    switch.pretty_lamp:
+    switch.0120060260019464e05f:
       state: on
     switch.hutch:
       state: on

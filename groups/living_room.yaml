@@ -7,7 +7,7 @@ livingroom:
     - light.living_room_lamp
     - switch.salt_lamp
     - switch.01200602dc4f22022bd9
-    - switch.pretty_lamp
+    - switch.0120060260019464e05f
     - sensor.living_room_temperature
     - binary_sensor.living_room_occupancy
 

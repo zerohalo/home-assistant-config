@@ -10,7 +10,7 @@
       state: off
     switch.television:
       state: off
-    switch.pretty_lamp:
+    switch.0120060260019464e05f:
       state: off
     group.bedroom_lights:
       state: on

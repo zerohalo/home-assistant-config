@@ -6,6 +6,7 @@
       - humidity
       - rf_status
       - battery_vp
+      - battery_percent
     indoor:
       - temperature
       - humidity
